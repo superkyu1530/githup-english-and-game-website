@@ -2,22 +2,84 @@
 if(!defined('_CODE')){
     die('Access denied...');
 }
+
+//kiem tra trang thai dang nhap
+$checkLogin = false;
+if(getSession('loginToken')){
+    $tokenLogin = getSession('loginToken');
+
+    //kiem tra voi database
+    $queryToken = oneRaw("SELECT user_Id FROM tokenlogin WHERE token = '$tokenLogin' ");
+
+    if(!empty($queryToken)){
+        $checkLogin = true;
+    } else {
+        removeSession('loginToken');
+    }
+}
+
+//if(!$checkLogin){
+  //  redirect('?module=user&action=userClient');
+//}
+
+//quy trinh dang nhap
 if(isPost()){
-$email = $_POST['email'];
-$password = $_POST['password'];
+  $filterAll = filter();
+  if(!empty(trim($filterAll['email'])) && !empty(trim($filterAll['password']))){
+    $email =$filterAll['email'];
+    $password =$filterAll['password'];
 
-$userQuery = oneRaw("SELECT password FROM users WHERE email = '$email");
+    $userQuery = oneRaw("SELECT password, id FROM users WHERE email = '$email'");
 
-if (!empty($userQuery)) {
-  $passwordHash = $userQuery['password'];
-  if($password==$passwordHash){
-    
-    
+    if(!empty($userQuery)){
+      $passwordHash = $userQuery['password'];
+      $userId = $userQuery['id'];
+      if(password_verify($password,$passwordHash)){
+
+        //tao token login
+        $tokenLogin = sha1(uniqid().time());
+
+        //Insert vao bang users.loginToken
+        $dataInsert = [
+          'user_Id' => $userId,
+          'token' => $tokenLogin,
+          'create_at' => date('Y-m-d H:i:s')
+        ];
+
+        $insertStatus = insert('tokenlogin',$dataInsert);
+        if($insertStatus){
+          //Insert thanh cong
+
+          //Luu tokeLogin vao session
+          setSession('loginToken',$tokenLogin);
+
+          redirect('?module=user&action=userClient');
+        } else {
+          setFlashData('msg','Unable to login, please try again later');
+          setFlashData('msg_type','danger');
+        }
+        
+      } else{
+        setFlashData('msg','Incorrect password');
+        setFlashData('msg_type','danger');
+        redirect('?module=auth&action=login');
+      }
+
+    } else{
+      setFlashData('msg','Email does not exist');
+      setFlashData('msg_type','danger');
+      redirect('?module=auth&action=login');
+    }
+
+  } else{
+    setFlashData('msg','Please enter your email and password!');
+    setFlashData('msg_type','danger');
+    redirect('?module=auth&action=login');
   }
 }
 
-}
-
+$msg = getFlashData('msg');
+$msgType = getFlashData('msg_type');
 
 ?>
 <!DOCTYPE html>
@@ -52,41 +114,48 @@ if (!empty($userQuery)) {
       <a href="?module=home&action=homepage"><em>Grad</em> School</a>
     </div>
 </header>
-<section class="vh-110 gradient-custom">
+<section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-light text-black" style="border-radius: 1rem; margin-top: 40px; ">
-          <div class="card-body p-5 text-center">
+          <div class="card-body">
 
             <div class="mb-md-5 mt-md-4 pb-5">
 
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-black-50 mb-5">Please enter your login and password!</p>
+              <p class="text-black-50 mb-5">Enter your email and password!</p>
+              <?php 
+                    if(!empty($msg)){
+                       getSmg($msg,$msgType);
+                    }
+
+                ?>
               <form action="" method="post">
-              <div class="form-group mg-form mb-4">
-              <label class="form-label" for="typeEmailX">Email</label>
-                <input type="email" id="typeEmailX" class="form-control form-control-lg " name="email" />
-                
-              </div>
 
-              <div class="form-outline form-white mb-4">
-              <label class="form-label" for="typePasswordX">Password</label>
-                <input type="password" id="typePasswordX" class="form-control form-control-lg" name="password"/>
-                
-              </div>
+                <div class="form-group mg-form">
+                  <label for="">Email</label>
+                  <input type="email" class="form-control" placeholder="Enter email address" name="email">
+                </div>
 
-              <p class="small mb-5 pb-lg-2"><a class="text-black-50" href="?module=auth&action=forgot">Forgot password?</a></p>
+                <div class="form-group mg-form">
+                  <label for="">Password</label>
+                  <input type="password" class="form-control" placeholder="Enter password" name="password">
+                </div>
 
-              <button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
+                <button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
+
+                <hr>
+                <div>
+                <p class="mb-0">Forgot password?<a href="?module=auth&action=forgot" class="text-black-50 fw-bold"> Here!</a>
+                </p>
+
+                <p class="mb-0">Do not have an account? <a href="?module=auth&action=signup" class="text-black-50 fw-bold"> Sign Up</a>
+                </p>
+                </div>
+
               </form>
             </div>
-
-            <div>
-              <p class="mb-0">Don't have an account? <a href="?module=auth&action=signup" class="text-black-50 fw-bold">Sign Up</a>
-              </p>
-            </div>
-
           </div>
         </div>
       </div>

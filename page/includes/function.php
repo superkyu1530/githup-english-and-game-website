@@ -135,7 +135,7 @@ function isPhone($phone){
 }
 
 //Ham dinh dang thong bao loi 
-function getSmg($smg, $type = 'success'){
+function getSmg($smg, $type = ''){
     echo '<div> class= "alert alert-'.$type.'">';
     echo $smg;
     echo '</div>';
@@ -155,4 +155,23 @@ function from_error($fileName, $beforeHtml='', $afterHtml='', $errors){
 //Ham hien thi du lieu cu
 function old($fileName, $old, $default=null){
     return (!empty($old[$fileName])) ? $old[$fileName] : $default;
+}
+
+//ham kiem tra trang thai dang nhap
+function isLogin(){
+    $checkLogin = false;
+if(getSession('loginToken')){
+    $tokenLogin = getSession('loginToken');
+
+    //kiem tra voi database
+    $queryToken = oneRaw("SELECT user_Id FROM tokenlogin WHERE token = '$tokenLogin' ");
+
+    if(!empty($queryToken)){
+        $checkLogin = true;
+    } else {
+        removeSession('loginToken');
+    }
+}
+
+return $checkLogin;
 }
