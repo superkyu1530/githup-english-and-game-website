@@ -7,6 +7,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
     <style>
         .nav-link-hover:hover {
             color: #389bf0;
@@ -75,12 +77,42 @@
                     </div>
                 </button>
 
-                <div id="infoPanel" class="info-panel mr-5 shadow" style="display: none; width: 350px; height: 500px; border-radius: 10px">
+                <!-- Bảng menu -->
+                <div id="infoPanel" class="info-panel mr-5 shadow" style="display: none; width: 350px; height: 550px; border-radius: 10px; background-color: #f1f4f9;">
                     <!-- Your information panel content goes here -->
-                    <p>This is the information panel.</p>
-                    <p>This is the information panel.</p>
-                    <p>This is the information panel.</p>
-                    <!-- Add more content here -->
+
+                    <div>
+                        <span>Account</span>
+
+                        <ul class="list-unstyled d-flex flex-column ">
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-dollar-sign ml-2 mr-4"></i> Payment Options</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-globe ml-2 mr-4"></i> Country</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-bell ml-2 mr-4"></i> Notification Settings</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-edit ml-2 mr-4"></i> Edit Profile</li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <span>General</span>
+
+                        <ul class=" list-unstyled d-flex flex-column ">
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-question ml-2 mr-4"></i> Support</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-file ml-2 mr-4"></i> Terms of Service</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-user-plus ml-2 mr-4"></i> Invite Friends</li>
+
+                        </ul>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button class="btn btn-danger"> <i class="fa fa-sign-out-alt"></i> Logout</button>
+                    </div>
                 </div>
             </div>
         </div>
