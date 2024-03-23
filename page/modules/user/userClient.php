@@ -1,134 +1,201 @@
-<?php
-if(!defined('_CODE')){
-    die('Access denied...');
-}
-
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-  <head>
+<head>
+    <title>User Client Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-    <title>Grad School HTML5 Template</title>
-    
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
     <style>
-        #game1Iframe {
-            display: none;
-            width: 100%;
-            height: 630px;
-            border: none;
+        .nav-link-hover:hover {
+            color: #389bf0;
+            background-color: #389bf0;
+            border-color: #007bff;
+        }
+
+        .nav-tabs .nav-item .nav-link {
+            border: none !important;
+            background-color: transparent !important;
+        }
+
+        .nav-tabs .nav-item .nav-link.active {
+            border: none !important;
+            border-bottom: 5px solid #389bf0 !important;
+        }
+
+        /* Thêm shadow cho thẻ li */
+        .nav-tabs .nav-item .nav-link {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-decoration: none;
+        }
+
+        /* Xóa gạch chân khi hover và active */
+        .home-link:hover,
+        .home-link:active {
+            text-decoration: none;
         }
     </style>
-    <style>
-            #game2Iframe {
-                display: none;
-                width: 100%;
-                height: 630px;
-                border: none;
-            }
-    </style>
-   <!-- <style>
-            #game3Iframe {
-                display: none;
-                width: 100%;
-                height: 1000px;
-                border: none;
-            }
-    </style>
-    <style>
-        #game4Iframe {
-            display: none;
-            width: 100%;
-            height: 1000px;
-            border: none;
-        }
- </style> -->
-  </head>
 
-<body >
-  <!--header-->
-  <header class="main-header clearfix" role="header">
-    <div class="logo">
-      <a href="#"><em>Grad</em> School</a>
-    </div>
-</header>
-
-<section style="height: 700px; margin-top: 100px;">
-<button id="showGameBtn" style="margin-top: 100;">Line Coler</button>
-    <iframe id="game1Iframe" src="Web Test Game/Line Coler/Line Coler.html"></iframe>
     <script>
-        document.getElementById("showGameBtn").onclick = function() {
-            var iframe = document.getElementById("game1Iframe");
-            if(iframe.style.display === "none") {
-                iframe.style.display = "block";
-            } else {
-                iframe.style.display = "none";
-            }
-        };
+        $(document).ready(function() {
+            $(".nav-link").on("shown.bs.tab", function(e) {
+                var targetPane = $(e.target).attr("href");
+                $(".tab-pane").removeClass("show active"); // Xóa lớp "show" và "active" khỏi tất cả các tab-pane
+                $(targetPane).addClass("show active"); // Thêm lớp "show" và "active" vào tab-pane đang được chọn
+            });
+
+            $(".home-link").click(function(e) {
+                e.preventDefault();
+                $(".tab-pane").removeClass("show active");
+                $($(this).attr("href")).addClass("show active");
+                // Tải lại trang
+                location.reload();
+            });
+        });
     </script>
 
-<button id="GameBtn">Fill the Cups</button>
-<iframe id="game2Iframe" src="Web Test Game/Fill The Cups/fillthecups.html"></iframe>
-<script>
-    document.getElementById("GameBtn").onclick = function() {
-        var iframe = document.getElementById("game2Iframe");
-        if(iframe.style.display === "none") {
-            iframe.style.display = "block";
-        } else {
-            iframe.style.display = "none";
-        }
-    };
-</script>
+</head>
 
-<!--<button id="Game3Btn">Breath Out Pro!</button>
-<iframe id="game3Iframe" src="Breath Out Pro!/Breath Out Pro!.html"></iframe>
-<script>
-    document.getElementById("Game3Btn").onclick = function() {
-        var iframe = document.getElementById("game3Iframe");
-        if(iframe.style.display === "none") {
-            iframe.style.display = "block";
-        } else {
-            iframe.style.display = "none";
-        }
-    };
-</script>
+<body>
 
-<button id="Game4Btn">Block Puzzle</button>
-<iframe id="game4Iframe" src="Block Puzzle/Block Puzzle.html"></iframe>
-<script>
-    document.getElementById("Game4Btn").onclick = function() {
-        var iframe = document.getElementById("game4Iframe");
-        if(iframe.style.display === "none") {
-            iframe.style.display = "block";
-        } else {
-            iframe.style.display = "none";
-        }
-    };
-</script> -->
-</section>
+    <div class="container-fluid">
 
-<footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <p><i class="fa fa-copyright"></i> Copyright 2024 by Grad School  
+        <div class="d-flex align-items-center">
+            <h1 class="mt-4 mb-4">
+                <a class="home-link active" data-toggle="tab" href="#tab-panel-4">HOME</a>
+            </h1>
+            <div class="ml-auto button-container">
+                <button class=" mt-4 mr-4 rounded-circle overflow-hidden" style="width: 50px; height: 50px; padding: 0;" onclick="toggleInfoPanel()">
+                    <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border-radius: 50%; overflow: hidden;">
+                        <img src="../page/assets/images/courses-02.jpg" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </button>
+
+                <!-- Bảng menu -->
+                <div id="infoPanel" class="info-panel mr-5 shadow" style="display: none; width: 350px; height: 550px; border-radius: 10px; background-color: #f1f4f9;">
+                    <!-- Your information panel content goes here -->
+
+                    <div>
+                        <span>Account</span>
+
+                        <ul class="list-unstyled d-flex flex-column ">
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-dollar-sign ml-2 mr-4"></i> Payment Options</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-globe ml-2 mr-4"></i> Country</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-bell ml-2 mr-4"></i> Notification Settings</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-edit ml-2 mr-4"></i> Edit Profile</li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <span>General</span>
+
+                        <ul class=" list-unstyled d-flex flex-column ">
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-question ml-2 mr-4"></i> Support</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-file ml-2 mr-4"></i> Terms of Service</li>
+
+                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-user-plus ml-2 mr-4"></i> Invite Friends</li>
+
+                        </ul>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button class="btn btn-danger"> <i class="fa fa-sign-out-alt"></i> Logout</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <style>
+            .button-container {
+                position: relative;
+            }
+
+            .info-panel {
+                position: absolute;
+                top: calc(100% + 10px);
+                right: -50px;
+                z-index: 2;
+                background-color: white;
+                padding: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+
+        <script>
+            function toggleInfoPanel() {
+                var infoPanel = document.getElementById("infoPanel");
+                if (infoPanel.style.display === "none") {
+                    infoPanel.style.display = "block";
+                } else {
+                    infoPanel.style.display = "none";
+                }
+            }
+        </script>
     </div>
-  </footer>
+
+    <div class="d-flex justify-content-center align-items-center rounded mt-8" style="background-color: #389bf0;">
+
+        <ul class="nav nav-tabs w-100 mt-1 text-center" style="margin-left: 100px; margin-right: 100px;">
+
+            <!-- <li class="nav-item">
+                    <a class="home-link active" data-toggle="tab" href="#tab-panel-0"></a>
+                </li> -->
+
+            <li class="nav-item w-25 mt-2 mb-2">
+                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-0">Course</a>
+            </li>
+            <li class="nav-item w-25 mt-2 mb-2">
+                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-1">Exercise</a>
+            </li>
+            <li class="nav-item w-25 mt-2 mb-2">
+                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-2">Entertaining Game</a>
+            </li>
+            <li class="nav-item w-25 mt-2 mb-2">
+                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-3">Learning Support</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="tab-content mt-4">
+
+        <div id="tab-panel-4" class="tab-pane fade show active">
+            <?php include 'userpage.php'; ?>
+        </div>
+
+        <div id="tab-panel-0" class="tab-pane fade">
+            <?php include 'course.php'; ?>
+        </div>
+
+        <div id="tab-panel-1" class="tab-pane fade">
+            <?php include 'exercise.php'; ?>
+
+        </div>
+
+        <div id="tab-panel-2" class="tab-pane fade">
+            <?php include 'entertaininggame.php'; ?>
+        </div>
+
+        <div id="tab-panel-3" class="tab-pane fade">
+            <?php include 'learningsuppost.php'; ?>
+        </div>
+
+    </div>
+
+    </div>
+
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 <?php
-if(!defined('_CODE')){
-    die('Access denied...');
+if (!defined('_CODE')) {
+  die('Access denied...');
 }
 
 ?>
@@ -9,23 +9,23 @@ if(!defined('_CODE')){
 
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-<title>Grad School HTML5 Template</title>
+  <title>Grad School HTML5 Template</title>
 
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Additional CSS Files -->
-<link rel="stylesheet" href="assets/css/fontawesome.css">
-<link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
-<link rel="stylesheet" href="assets/css/owl.css">
-<link rel="stylesheet" href="assets/css/lightbox.css">
-<!--
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+  <!--
 
 TemplateMo 557 Grad School
 
@@ -36,7 +36,7 @@ https://templatemo.com/tm-557-grad-school
 
 <body>
 
-   
+
   <!--header-->
   <header class="main-header clearfix" role="header">
     <div class="logo">
@@ -45,7 +45,7 @@ https://templatemo.com/tm-557-grad-school
     <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
     <nav id="menu" class="main-nav" role="navigation">
       <ul class="main-menu">
-        <li><a href="#section1">Home</a></li>
+        <li><a href="?module=user&action=userClient">Home</a></li>
         <li class="has-submenu"><a href="#section2">About Us</a>
           <ul class="sub-menu">
             <li><a href="#section2">Who we are?</a></li>
@@ -54,26 +54,26 @@ https://templatemo.com/tm-557-grad-school
           </ul>
         </li>
         <li><a href="#section4">Courses</a></li>
-      <li> <a href="?module=auth&action=login" >Sign In Here!</a></li>
+        <li> <a href="?module=auth&action=login">Sign In Here!</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- ***** Main Banner Area Start ***** -->
   <section class="section main-banner" id="top" data-section="section1">
-      <video autoplay muted loop id="bg-video">
-          <source src="assets/images/course-video.mp4" type="video/mp4" />
-      </video>
+    <video autoplay muted loop id="bg-video">
+      <source src="assets/images/course-video.mp4" type="video/mp4" />
+    </video>
 
-      <div class="video-overlay header-text">
-          <div class="caption">
-              <h6>classroom of the future </h6>
-              <h2><em>Choose</em> Your Classroom</h2>
-              <div class="main-button">
-                  <div class="scroll-to-section"><a href="#section2">Discover more</a></div>
-              </div>
-          </div>
+    <div class="video-overlay header-text">
+      <div class="caption">
+        <h6>classroom of the future </h6>
+        <h2><em>Choose</em> Your Classroom</h2>
+        <div class="main-button">
+          <div class="scroll-to-section"><a href="#section2">Discover more</a></div>
+        </div>
       </div>
+    </div>
   </section>
   <!-- ***** Main Banner Area End ***** -->
 
@@ -91,7 +91,7 @@ https://templatemo.com/tm-557-grad-school
                 <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
                 <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
                 <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
-            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ https://templatemo.com/tm-557-grad-school
                 <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
                 <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
                 <div class="scroll-to-section"><a href="#section3">Details</a></div>
-            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ https://templatemo.com/tm-557-grad-school
                 <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
                 <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
                 <div class="scroll-to-section"><a href="#section4">Read More</a></div>
-            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@ https://templatemo.com/tm-557-grad-school
                   </div>
                   <div class="col-md-6">
                     <h4>Top Level</h4>
-                    <p>You can modify this HTML layout by editing contents and adding more pages as you needed. Since this template has options to add dropdown menus, you can put many HTML pages.</p> 
+                    <p>You can modify this HTML layout by editing contents and adding more pages as you needed. Since this template has options to add dropdown menus, you can put many HTML pages.</p>
                     <p>Suspendisse tincidunt, magna ut finibus rutrum, libero dolor euismod odio, nec interdum quam felis non ante.</p>
                   </div>
                 </div>
@@ -345,7 +345,7 @@ https://templatemo.com/tm-557-grad-school
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p><i class="fa fa-copyright"></i> Copyright 2020 by Grad School  
+          <p><i class="fa fa-copyright"></i> Copyright 2020 by Grad School
         </div>
       </div>
     </div>
@@ -354,16 +354,17 @@ https://templatemo.com/tm-557-grad-school
   <!-- Scripts -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-    <script src="/page/modules/vendor/jquery/jquery.min.js"></script>
+  <script src="/page/modules/vendor/jquery/jquery.min.js"></script>
 
 
 
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/video.js"></script>
-    <script src="assets/js/slick-slider.js"></script>
-    <script src="assets/js/custom.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
 </body>
+
 </html>
