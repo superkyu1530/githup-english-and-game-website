@@ -6,15 +6,14 @@ if(!defined('_CODE')){
     function query($sql, $data=[], $check = false){
 
         global $conn;
-        $result = false;
+        $ketqua = false;
         try {
             $statement = $conn -> prepare($sql);
 
             if(!empty($data)){
-                $result = $statement -> execute($data);
-            }
-            else {
-                $result = $statement -> execute();
+                $ketqua = $statement -> execute($data);
+            } else {
+                $ketqua = $statement -> execute();
             }
         } catch (Exception $exp) {
             echo $exp -> getMessage().'<br>';
@@ -27,7 +26,7 @@ if(!defined('_CODE')){
             return $statement;
         }
 
-        return $result;
+        return $ketqua;
     }
 
     // insert function
