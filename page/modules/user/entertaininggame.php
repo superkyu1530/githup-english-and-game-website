@@ -40,7 +40,7 @@
 
                                     <!-- Giá -->
                                     <div class="ml-auto mr-2">
-                                        <button class="btn btn-success">Play</button>
+                                        <a href="?module=user&action=game/gameplaypage"><button class="btn btn-success">Play</button></a>
                                     </div>
                                 </div>
                             </li>
@@ -67,7 +67,7 @@
 
                                     <!-- Giá -->
                                     <div class="ml-auto mr-2">
-                                        <button class="btn btn-success">Play</button>
+                                        <a href="?module=user&action=game/gameplaypage"><button class="btn btn-success">Play</button></a>
                                     </div>
                                 </div>
                             </li>

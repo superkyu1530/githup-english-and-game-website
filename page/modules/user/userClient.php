@@ -115,84 +115,82 @@
                     </div>
                 </div>
             </div>
+            <style>
+                .button-container {
+                    position: relative;
+                }
+
+                .info-panel {
+                    position: absolute;
+                    top: calc(100% + 10px);
+                    right: -50px;
+                    z-index: 2;
+                    background-color: white;
+                    padding: 10px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+            </style>
+
+            <script>
+                function toggleInfoPanel() {
+                    var infoPanel = document.getElementById("infoPanel");
+                    if (infoPanel.style.display === "none") {
+                        infoPanel.style.display = "block";
+                    } else {
+                        infoPanel.style.display = "none";
+                    }
+                }
+            </script>
         </div>
 
-        <style>
-            .button-container {
-                position: relative;
-            }
+        <div class="d-flex justify-content-center align-items-center rounded mt-8" style="background-color: #389bf0;">
 
-            .info-panel {
-                position: absolute;
-                top: calc(100% + 10px);
-                right: -50px;
-                z-index: 2;
-                background-color: white;
-                padding: 10px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-        </style>
+            <ul class="nav nav-tabs w-100 mt-1 text-center" style="margin-left: 100px; margin-right: 100px;">
 
-        <script>
-            function toggleInfoPanel() {
-                var infoPanel = document.getElementById("infoPanel");
-                if (infoPanel.style.display === "none") {
-                    infoPanel.style.display = "block";
-                } else {
-                    infoPanel.style.display = "none";
-                }
-            }
-        </script>
-    </div>
-
-    <div class="d-flex justify-content-center align-items-center rounded mt-8" style="background-color: #389bf0;">
-
-        <ul class="nav nav-tabs w-100 mt-1 text-center" style="margin-left: 100px; margin-right: 100px;">
-
-            <!-- <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="home-link active" data-toggle="tab" href="#tab-panel-0"></a>
                 </li> -->
 
-            <li class="nav-item w-25 mt-2 mb-2">
-                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-0">Course</a>
-            </li>
-            <li class="nav-item w-25 mt-2 mb-2">
-                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-1">Exercise</a>
-            </li>
-            <li class="nav-item w-25 mt-2 mb-2">
-                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-2">Entertaining Game</a>
-            </li>
-            <li class="nav-item w-25 mt-2 mb-2">
-                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-3">Learning Support</a>
-            </li>
+                <li class="nav-item w-25 mt-2 mb-2">
+                    <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-0">Course</a>
+                </li>
+                <li class="nav-item w-25 mt-2 mb-2">
+                    <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-1">Exercise</a>
+                </li>
+                <li class="nav-item w-25 mt-2 mb-2">
+                    <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-2">Entertaining Game</a>
+                </li>
+                <li class="nav-item w-25 mt-2 mb-2">
+                    <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-3">Learning Support</a>
+                </li>
 
-        </ul>
-    </div>
-
-    <div class="tab-content mt-4">
-
-        <div id="tab-panel-4" class="tab-pane fade show active">
-            <?php include 'userpage.php'; ?>
+            </ul>
         </div>
 
-        <div id="tab-panel-0" class="tab-pane fade">
-            <?php include 'course.php'; ?>
+        <div class="tab-content mt-4">
+
+            <div id="tab-panel-4" class="tab-pane fade show active">
+                <?php include 'userpage.php'; ?>
+            </div>
+
+            <div id="tab-panel-0" class="tab-pane fade">
+                <?php include 'course.php'; ?>
+            </div>
+
+            <div id="tab-panel-1" class="tab-pane fade">
+                <?php include 'exercise.php'; ?>
+
+            </div>
+
+            <div id="tab-panel-2" class="tab-pane fade">
+                <?php include 'entertaininggame.php'; ?>
+            </div>
+
+            <div id="tab-panel-3" class="tab-pane fade">
+                <?php include 'learningsuppost.php'; ?>
+            </div>
+
         </div>
-
-        <div id="tab-panel-1" class="tab-pane fade">
-            <?php include 'exercise.php'; ?>
-
-        </div>
-
-        <div id="tab-panel-2" class="tab-pane fade">
-            <?php include 'entertaininggame.php'; ?>
-        </div>
-
-        <div id="tab-panel-3" class="tab-pane fade">
-            <?php include 'learningsuppost.php'; ?>
-        </div>
-
-    </div>
 
     </div>
 
