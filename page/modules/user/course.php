@@ -259,6 +259,7 @@
                         </div>
                     </div>
                     <div id="tab1-panel-2" class="tab-pane fade">
+
                         <!-- thông tin -->
                         <div class="bg-white">
                             <h5 class="font-weight-bold ml-4">New Course</h5>
@@ -321,7 +322,7 @@
                                         <div class="d-flex align-items-center">
                                             <!-- Hình ảnh -->
                                             <div>
-                                                <img src="../page/assets/images/courses-02.jpg" alt="{product.name}" style="width: 170px; border-radius: 5%;">
+                                                <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 170px; border-radius: 5%;">
                                             </div>
 
                                             <!-- Tiêu đề -->

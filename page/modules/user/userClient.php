@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>PHP Page</title>
+    <title>User Client Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -64,60 +64,104 @@
 
     <div class="container-fluid">
 
-        <h1 class="mt-4 mb-4">
-            <a class="home-link active" data-toggle="tab" href="#tab-panel-0">HOME</a>
-        </h1>
+        <div class="d-flex align-items-center">
+            <h1 class="mt-4 mb-4">
+                <a class="home-link active" data-toggle="tab" href="#tab-panel-4">HOME</a>
+            </h1>
+            <div class="ml-auto button-container">
+                <button class=" mt-4 mr-4 rounded-circle overflow-hidden" style="width: 50px; height: 50px; padding: 0;" onclick="toggleInfoPanel()">
+                    <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border-radius: 50%; overflow: hidden;">
+                        <img src="../page/assets/images/courses-02.jpg" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </button>
 
-        <div class="d-flex justify-content-center align-items-center rounded mt-8" style="background-color: #389bf0;">
-
-            <ul class="nav nav-tabs w-100 mt-1 text-center" style="margin-left: 100px; margin-right: 100px;">
-
-                <!-- <li class="nav-item">
-          <a class="home-link active" data-toggle="tab" href="#tab-panel-0"></a>
-        </li> -->
-
-                <li class="nav-item w-25 mt-2 mb-2">
-                    <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-1">Course</a>
-                </li>
-                <li class="nav-item w-25 mt-2 mb-2">
-                    <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-2">Exercise</a>
-                </li>
-                <li class="nav-item w-25 mt-2 mb-2">
-                    <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-3">Entertaining Game</a>
-                </li>
-                <li class="nav-item w-25 mt-2 mb-2">
-                    <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-4">Learning Support</a>
-                </li>
-
-            </ul>
+                <div id="infoPanel" class="info-panel mr-5 shadow" style="display: none; width: 350px; height: 500px; border-radius: 10px">
+                    <!-- Your information panel content goes here -->
+                    <p>This is the information panel.</p>
+                    <p>This is the information panel.</p>
+                    <p>This is the information panel.</p>
+                    <!-- Add more content here -->
+                </div>
+            </div>
         </div>
 
-        <div class="tab-content mt-4">
+        <style>
+            .button-container {
+                position: relative;
+            }
 
-            <div id="tab-panel-0" class="tab-pane fade show active">
-                <?php include 'userpage.php'; ?>
-            </div>
+            .info-panel {
+                position: absolute;
+                top: calc(100% + 10px);
+                right: -50px;
+                z-index: 2;
+                background-color: white;
+                padding: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        </style>
 
-            <div id="tab-panel-1" class="tab-pane fade">
-                <?php include 'course.php'; ?>
-            </div>
+        <script>
+            function toggleInfoPanel() {
+                var infoPanel = document.getElementById("infoPanel");
+                if (infoPanel.style.display === "none") {
+                    infoPanel.style.display = "block";
+                } else {
+                    infoPanel.style.display = "none";
+                }
+            }
+        </script>
+    </div>
 
-            <div id="tab-panel-2" class="tab-pane fade">
-                <?php include 'exercise.php'; ?>
+    <div class="d-flex justify-content-center align-items-center rounded mt-8" style="background-color: #389bf0;">
 
-            </div>
+        <ul class="nav nav-tabs w-100 mt-1 text-center" style="margin-left: 100px; margin-right: 100px;">
 
-            <div id="tab-panel-3" class="tab-pane fade">
-                <?php include 'entertaininggame.php'; ?>
+            <!-- <li class="nav-item">
+                    <a class="home-link active" data-toggle="tab" href="#tab-panel-0"></a>
+                </li> -->
 
-            </div>
+            <li class="nav-item w-25 mt-2 mb-2">
+                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-0">Course</a>
+            </li>
+            <li class="nav-item w-25 mt-2 mb-2">
+                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-1">Exercise</a>
+            </li>
+            <li class="nav-item w-25 mt-2 mb-2">
+                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-2">Entertaining Game</a>
+            </li>
+            <li class="nav-item w-25 mt-2 mb-2">
+                <a class="nav-link text-light font-weight-bold nav-link-hover" data-toggle="tab" href="#tab-panel-3">Learning Support</a>
+            </li>
 
-            <div id="tab-panel-4" class="tab-pane fade">
-                <?php include 'learningsuppost.php'; ?>
+        </ul>
+    </div>
 
-            </div>
+    <div class="tab-content mt-4">
+
+        <div id="tab-panel-4" class="tab-pane fade show active">
+            <?php include 'userpage.php'; ?>
+        </div>
+
+        <div id="tab-panel-0" class="tab-pane fade">
+            <?php include 'course.php'; ?>
+        </div>
+
+        <div id="tab-panel-1" class="tab-pane fade">
+            <?php include 'exercise.php'; ?>
 
         </div>
+
+        <div id="tab-panel-2" class="tab-pane fade">
+            <?php include 'entertaininggame.php'; ?>
+        </div>
+
+        <div id="tab-panel-3" class="tab-pane fade">
+            <?php include 'learningsuppost.php'; ?>
+        </div>
+
+    </div>
+
     </div>
 
 </body>

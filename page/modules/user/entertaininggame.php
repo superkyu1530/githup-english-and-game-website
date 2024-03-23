@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Content Page</title>
+    <title>Entertaining Game Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -25,11 +25,11 @@
                         <ul class="list-unstyled">
 
                             <!-- Danh sách course -->
-                            <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white shadow" style="height: 150px; background-color: #f1f4f9;">
+                            <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 150px; background-color: #f1f4f9;">
                                 <div class="d-flex align-items-center flex-grow-1">
                                     <!-- Hình ảnh -->
                                     <div class="ml-2">
-                                        <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 50%;">
+                                        <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 25%;">
                                     </div>
 
                                     <!-- Tiêu đề -->
@@ -52,11 +52,11 @@
                         <ul class="list-unstyled">
 
                             <!-- Danh sách course -->
-                            <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white shadow" style="height: 150px; background-color: #f1f4f9;">
+                            <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 150px; background-color: #f1f4f9;">
                                 <div class="d-flex align-items-center flex-grow-1">
                                     <!-- Hình ảnh -->
                                     <div class="ml-2">
-                                        <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 50%;">
+                                        <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 25%;">
                                     </div>
 
                                     <!-- Tiêu đề -->
@@ -85,11 +85,11 @@
                         <div class="col-lg-4 col-md-6 mb-4">
                             <ul class="list-unstyled">
                                 <!-- Danh sách course -->
-                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white shadow" style="height: 150px; background-color: #f1f4f9;">
+                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 150px; background-color: #f1f4f9;">
                                     <div class="d-flex align-items-center flex-grow-1">
                                         <!-- Hình ảnh -->
                                         <div class="ml-2">
-                                            <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 50%;">
+                                            <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 25%;">
                                         </div>
 
                                         <!-- Tiêu đề -->
@@ -111,11 +111,11 @@
                         <div class="col-lg-4 col-md-6 mb-4">
                             <ul class="list-unstyled">
                                 <!-- Danh sách course -->
-                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white shadow" style="height: 150px; background-color: #f1f4f9;">
+                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 150px; background-color: #f1f4f9;">
                                     <div class="d-flex align-items-center flex-grow-1">
                                         <!-- Hình ảnh -->
                                         <div>
-                                            <img src="../page/assets/images/courses-03.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 50%;">
+                                            <img src="../page/assets/images/courses-03.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 25%;">
                                         </div>
 
                                         <!-- Tiêu đề -->
@@ -138,11 +138,11 @@
                         <div class="col-lg-4 col-md-6 mb-4">
                             <ul class="list-unstyled">
                                 <!-- Danh sách course -->
-                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white shadow" style="height: 150px; background-color: #f1f4f9;">
+                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 150px; background-color: #f1f4f9;">
                                     <div class="d-flex align-items-center flex-grow-1">
                                         <!-- Hình ảnh -->
                                         <div>
-                                            <img src="../page/assets/images/courses-03.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 50%;">
+                                            <img src="../page/assets/images/courses-03.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 25%;">
                                         </div>
 
                                         <!-- Tiêu đề -->
@@ -165,11 +165,11 @@
                         <div class="col-lg-4 col-md-6 mb-4">
                             <ul class="list-unstyled">
                                 <!-- Danh sách course -->
-                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white shadow" style="height: 150px; background-color: #f1f4f9;">
+                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 150px; background-color: #f1f4f9;">
                                     <div class="d-flex align-items-center flex-grow-1">
                                         <!-- Hình ảnh -->
                                         <div>
-                                            <img src="../page/assets/images/courses-03.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 50%;">
+                                            <img src="../page/assets/images/courses-03.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 25%;">
                                         </div>
 
                                         <!-- Tiêu đề -->
