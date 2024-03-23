@@ -186,6 +186,20 @@
                 document.getElementById("tableDiv").classList.remove("d-none");
             }
         }, 1000);
+
+        function replayCountdown() {
+            // Đặt giá trị ban đầu cho các đối tượng đếm ngược
+            var hoursElement = document.getElementById("hours");
+            var minutesElement = document.getElementById("minutes");
+            var secondsElement = document.getElementById("seconds");
+
+            hoursElement.innerHTML = "00";
+            minutesElement.innerHTML = "00";
+            secondsElement.innerHTML = "00";
+
+            // Bắt đầu đếm ngược từ đầu
+            startCountdown();
+        }
     </script>
 
 </head>
@@ -354,7 +368,7 @@
 
                 <div class="d-flex justify-content-center">
                     <button class="btn btn-primary mr-2">Pause</button>
-                    <button class="btn btn-primary">Replay</button>
+                    <button class="btn btn-primary" onclick="replayCountdown()">Replay</button>
                 </div>
 
                 <!-- thời gian đến ngược -->
