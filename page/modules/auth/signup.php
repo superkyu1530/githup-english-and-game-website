@@ -84,12 +84,12 @@ if(!defined('_CODE')){
         setFlashData('old',$filterAll);
         redirect('?module=auth&action=signup');
     }
-}
+} */
 
   $smg = getFlashData('smg');
   $smg_type = getFlashData('smg_type');
   $errors = getFlashData('errors');
-  $old = getFlashData('old'); */
+  $old = getFlashData('old'); 
 
   if(isPost()){
     $filterAll = filter();

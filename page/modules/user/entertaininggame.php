@@ -34,13 +34,13 @@
 
                                     <!-- Tiêu đề -->
                                     <div class="ml-2">
-                                        <span class="d-block font-weight-bold mb-2">ScreenStudio App</span>
+                                        <span class="d-block font-weight-bold mb-2">Block Puzzle</span>
                                         <span class="text-xs">Paid on: May 4th, 2023</span>
                                     </div>
 
                                     <!-- Giá -->
                                     <div class="ml-auto mr-2">
-                                        <a href="?module=user&action=game/gameplaypage"><button class="btn btn-success">Play</button></a>
+                                        <a href="?module=user&action=gameplaypage"><button class="btn btn-success">Play</button></a>
                                     </div>
                                 </div>
                             </li>
@@ -61,13 +61,13 @@
 
                                     <!-- Tiêu đề -->
                                     <div class="ml-2">
-                                        <span class="d-block font-weight-bold mb-2">Slack Ltd</span>
+                                        <span class="d-block font-weight-bold mb-2">Line Coler</span>
                                         <span class="text-xs">Paid on: May 4th, 2023</span>
                                     </div>
 
                                     <!-- Giá -->
                                     <div class="ml-auto mr-2">
-                                        <a href="?module=user&action=game/gameplaypage"><button class="btn btn-success">Play</button></a>
+                                        <a href="?module=user&action=gameplaypage"><button class="btn btn-success">Play</button></a>
                                     </div>
                                 </div>
                             </li>
@@ -102,7 +102,7 @@
                                         <!-- Giá -->
                                         <div class="ml-auto mr-2 text-center">
                                             <span class="d-block text-danger">$500.00</span>
-                                            <a href="?module=user&action=payment/paymentpage"><button class="btn btn-primary">Buy</button></a>
+                                            <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a>
                                         </div>
 
                                     </div>
@@ -129,7 +129,7 @@
                                         <!-- Giá -->
                                         <div class="ml-auto mr-2 text-center">
                                             <span class="d-block text-danger">$500.00</span>
-                                            <a href="?module=user&action=payment/paymentpage"><button class="btn btn-primary">Buy</button></a>
+                                            <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a>
                                         </div>
 
                                     </div>
@@ -156,7 +156,7 @@
                                         <!-- Giá -->
                                         <div class="ml-auto mr-2 text-center">
                                             <span class="d-block text-danger">$500.00</span>
-                                            <a href="?module=user&action=payment/paymentpage"><button class="btn btn-primary">Buy</button></a>
+                                            <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a>
                                         </div>
 
                                     </div>
@@ -183,7 +183,7 @@
                                         <!-- Giá -->
                                         <div class="ml-auto mr-2 text-center">
                                             <span class="d-block text-danger">$500.00</span>
-                                            <a href="?module=user&action=payment/paymentpage"><button class="btn btn-primary">Buy</button></a>
+                                            <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a>
 
                                         </div>
 

@@ -142,14 +142,8 @@ function isPhone($phone)
 }
 
 //Ham dinh dang thong bao loi 
-<<<<<<< HEAD
-function getSmg($smg, $type = 'success')
-{
-    echo '<div> class= "alert alert-' . $type . '">';
-=======
-function getSmg($smg, $type = ''){
+function getSmg($smg, $type = 'susece'){
     echo '<div> class= "alert alert-'.$type.'">';
->>>>>>> 614c2310b863658b491d730c2ef98387da8a5b0e
     echo $smg;
     echo '</div>';
 }
@@ -172,8 +166,6 @@ function old($fileName, $old, $default = null)
 {
     return (!empty($old[$fileName])) ? $old[$fileName] : $default;
 }
-<<<<<<< HEAD
-=======
 
 //ham kiem tra trang thai dang nhap
 function isLogin(){
@@ -193,4 +185,4 @@ if(getSession('loginToken')){
 
 return $checkLogin;
 }
->>>>>>> 614c2310b863658b491d730c2ef98387da8a5b0e
+

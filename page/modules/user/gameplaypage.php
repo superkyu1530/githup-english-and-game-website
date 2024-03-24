@@ -210,7 +210,7 @@
 
         <div class="d-flex align-items-center">
             <h1 class="mt-4 mb-4">
-                <a class="home-link active" data-toggle="tab" href="#tab-panel-4">HOME</a>
+                <a href="?module=user&action=userClient">HOME</a>
             </h1>
             <div class="ml-auto button-container">
                 <button class=" mt-4 mr-4 rounded-circle overflow-hidden" style="width: 50px; height: 50px; padding: 0;" onclick="toggleInfoPanel()">
@@ -277,13 +277,13 @@
 
                             <!-- Tiêu đề -->
                             <div class="ml-2">
-                                <span class="d-block font-weight-bold mb-2">Slack Ltd</span>
+                                <span class="d-block font-weight-bold mb-2">Block Puzzle</span>
                                 <span class="text-xs">Paid on: May 4th, 2023</span>
                             </div>
 
                             <!-- Giá -->
                             <div class="ml-auto mr-2">
-                                <a href="?module=user&action=game/gameplaypage"><button class="btn btn-success">Play</button></a>
+                                <button class="btn btn-success">Play</button>
                             </div>
                         </div>
                     </li>
