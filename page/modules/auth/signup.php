@@ -3,7 +3,7 @@ if(!defined('_CODE')){
     die('Access denied...');
 }
 
-if(isPost()){
+/* if(isPost()){
     $filterAll = filter();
 
     $errors = [];
@@ -89,8 +89,24 @@ if(isPost()){
   $smg = getFlashData('smg');
   $smg_type = getFlashData('smg_type');
   $errors = getFlashData('errors');
-  $old = getFlashData('old');
-  
+  $old = getFlashData('old'); */
+
+  if(isPost()){
+    $filterAll = filter();
+    $activeToken = sha1(uniqid().time());
+
+    $dataInsert = [
+      'fullname' => $filterAll['fullname'],
+      'email' => $filterAll['email'],
+      'phone' => $filterAll['phone'],
+      'password' => password_hash($filterAll['password'],PASSWORD_DEFAULT),
+      'activeToken' => $activeToken,
+      'create_at' => date('Y-m-d H:i:s')
+    ];
+
+    $insertStatus = insert('users',$dataInsert);
+    redirect('?module=auth&action=login');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,7 +119,7 @@ if(isPost()){
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Grad School HTML5 Template</title>
+    <title>Register</title>
     
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -131,7 +147,7 @@ if(isPost()){
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-light text-black" style="border-radius: 1rem; margin-top: 40px">
-          <div class="card-body p-5 text-center">
+          <div class="card-body p-5">
 
             <div class="mb-md-5 mt-md-4 pb-5">
 
@@ -146,55 +162,39 @@ if(isPost()){
                 ?>
 
               <form action="" method="post">
+                
+              <div class="form-group mg-form">
+                  <label for="">Name</label>
+                  <input type="fullname" class="form-control" placeholder="Enter full name" name="fullname">
+                </div>
 
-              <div class="form-outline form-black mb-4">
-              <label class="form-label" for="typeName">Full Name</label>
-                <input type="fullname" id="typename" class="form-control form-control-lg " name="fullname" />
-                <?php                      
-                  echo from_error('fullname','<span class="error">','</span>',$errors);         
-                ?>
-              </div>
+              <div class="form-group mg-form">
+                  <label for="">Email</label>
+                  <input type="email" class="form-control" placeholder="Enter email address" name="email">
+                </div>
 
-              <div class="form-outline form-black mb-4">
-              <label class="form-label" for="typePhone">Phone Number</label>
-                <input type="number" id="typePhone" class="form-control form-control-lg " name="phone" />
-                <?php 
-                  echo (!empty($errors['fullname'])) ? '<span class="error">'.reset($errors['fullname']).'</span>' : null;               
-                ?>
-              </div>
+                <div class="form-group mg-form">
+                  <label for="">Phone</label>
+                  <input type="number" class="form-control" placeholder="Enter phone number" name="phone">
+                </div>
 
-              <div class="form-outline form-black mb-4">
-              <label class="form-label" for="typeEmailX">Email</label>
-                <input type="email" id="typeEmailX" class="form-control form-control-lg " name="email" />
-                <?php 
-                  echo (!empty($errors['email'])) ? '<span class="error">'.reset($errors['email']).'</span>' : null;               
-                ?>
-              </div>
+                <div class="form-group mg-form">
+                  <label for="">Password</label>
+                  <input type="password" class="form-control" placeholder="Enter password" name="password">
+                </div>
 
-              <div class="form-outline form-black mb-4">
-              <label class="form-label" for="typePassword">Password</label>
-                <input type="password" id="typePassword" class="form-control form-control-lg" name="password"/>
-                <?php 
-                  echo (!empty($errors['password'])) ? '<span class="error">'.reset($errors['password']).'</span>' : null;               
-                ?>
-              </div>
+                <div class="form-group mg-form">
+                  <label for="">Confirm Password</label>
+                  <input type="password" class="form-control" placeholder="Enter confirm password" name="confirm_password">
+                </div>
 
-              <div class="form-outline form-black mb-4">
-              <label class="form-label" for="typePasswordX">Confirm Password</label>
-                <input type="password" id="typePasswordX" class="form-control form-control-lg" name="confirmPassword"/>
-                <?php 
-                  echo (!empty($errors['confirmPassword'])) ? '<span class="error">'.reset($errors['confirmPassword']).'</span>' : null;               
-                ?>
-              </div>
-
-
-              <button class="btn btn-outline-dark btn-lg px-5" type="submit">Register</button>
-              </form>
-            </div>
-
-            <div>
-              <p class="mb-0">Do have an account? <a href="?module=auth&action=login" class="text-black-50 fw-bold">Sign In</a>
+                <button class="btn btn-outline-dark btn-lg px-5" type="submit">Register</button>
+              <hr>
+              <div>
+              <p class="mb-0">Already have an account <a href="?module=auth&action=login" class="text-black-50 fw-bold"> Sign In</a>
               </p>
+            </div>
+              </form>
             </div>
 
           </div>

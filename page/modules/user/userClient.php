@@ -1,3 +1,9 @@
+<?php
+//kiem tra trang thai dang nhap
+//if(!isLogin()){
+    //redirect('?module=auth&action=login');
+//}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -111,7 +117,7 @@
                         </ul>
                     </div>
                     <div class="d-flex justify-content-center align-items-center">
-                        <button class="btn btn-danger"> <i class="fa fa-sign-out-alt"></i> Logout</button>
+                       <a href="?module=auth&action=logout"><button class="btn btn-danger"> <i class="fa fa-sign-out-alt"></i> Logout</button> </a> 
                     </div>
                 </div>
             </div>

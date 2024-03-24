@@ -35,7 +35,7 @@ if(!defined('_CODE')){
         $truong = implode(',', $key);
         $valuetb = ':'.implode(',:',$key);
 
-        $sql = 'INSERT INTO' . $table . '('.$truong .')'. 'VALUES('. $valuetb .')';
+        $sql = 'INSERT INTO ' . $table . '('.$truong .')'. 'VALUES('. $valuetb .')';
         $kq = query($sql ,$data);
         return $kq;
     }
@@ -49,9 +49,9 @@ if(!defined('_CODE')){
         $update = trim($update, ',');
 
         if (!empty($condition)) {
-            $sql = 'UPDATE'. $table . ' SET ' . $update . ' WHERE ' .$condition;
+            $sql = 'UPDATE '. $table . ' SET ' . $update . ' WHERE ' .$condition;
         }else{
-            $sql = 'UPDATE'. $table . ' SET ' . $update;
+            $sql = 'UPDATE '. $table . ' SET ' . $update;
         }
         $kq = query($sql,$data);
         return $kq;
