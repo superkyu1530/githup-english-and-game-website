@@ -187,13 +187,13 @@
                                     </div>
                                     <div class="d-flex mt-2">
 
-                                        <input type="text" class="p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="money transfer account" style="width: 400px; height: 50px; border-radius: 10px;">
+                                        <input type="text" class="p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Account number" style="width: 400px; height: 50px; border-radius: 10px;">
 
-                                        <div class="p-2 mr-2 border d-flex flex-column align-items-start" style="width: 400px; height: 75px; border-radius: 10px; background-color: #f7f7f7">
-                                            <span class="d-block">Email</span>
-                                            <span class="ml-5">example@gmail.com</span>
-                                        </div>
+                                        <input type="text" class="p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Your account name" style="width: 400px; height: 50px; border-radius: 10px;">
+                                      
                                     </div>
+                                    <input type="text" class="p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Your email login" style="width: 400px; height: 50px; border-radius: 10px;">
+
 
                                 </div>
                             </div>

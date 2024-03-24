@@ -278,12 +278,31 @@
                             <!-- Tiêu đề -->
                             <div class="ml-2">
                                 <span class="d-block font-weight-bold mb-2">Block Puzzle</span>
-                                <span class="text-xs">Paid on: May 4th, 2023</span>
                             </div>
 
                             <!-- Giá -->
                             <div class="ml-auto mr-2">
-                                <button class="btn btn-success">Play</button>
+                                <button class="btn btn-success game-button" data-game-url="..\Web Test Game\Block Puzzle\Block Puzzle.html">Play</button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Danh sách course -->
+                    <li class="mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 100px; background-color: #f1f4f9;">
+                        <div class="d-flex align-items-center flex-grow-1">
+                            <!-- Hình ảnh -->
+                            <div class="ml-2">
+                                <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 50px; height: 50px; border-radius: 25%;">
+                            </div>
+
+                            <!-- Tiêu đề -->
+                            <div class="ml-2">
+                                <span class="d-block font-weight-bold mb-2">Line Coler</span>
+                            </div>
+
+                            <!-- Giá -->
+                            <div class="ml-auto mr-2">
+                                <button class="btn btn-success game-button" data-game-url="..\Web Test Game\Line Coler\Line Coler.html">Play</button>
                             </div>
                         </div>
                     </li>
@@ -299,34 +318,12 @@
                             <!-- Tiêu đề -->
                             <div class="ml-2">
                                 <span class="d-block font-weight-bold mb-2">Slack Ltd</span>
-                                <span class="text-xs">Paid on: May 4th, 2023</span>
-                            </div>
-
-                            <!-- Giá -->
-                            <div class="ml-auto mr-2">
-                                <a href="?module=user&action=game/gameplaypage"><button class="btn btn-success">Play</button></a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Danh sách course -->
-                    <li class="mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 100px; background-color: #f1f4f9;">
-                        <div class="d-flex align-items-center flex-grow-1">
-                            <!-- Hình ảnh -->
-                            <div class="ml-2">
-                                <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 50px; height: 50px; border-radius: 25%;">
-                            </div>
-
-                            <!-- Tiêu đề -->
-                            <div class="ml-2">
-                                <span class="d-block font-weight-bold mb-2">Slack Ltd</span>
-                                <span class="text-xs">Paid on: May 4th, 2023</span>
                             </div>
 
                             <!-- Giá -->
                             <div class="ml-auto mr-2 text-center">
                                 <span class="d-block text-danger">$500.00</span>
-                                <button class="btn btn-primary">Buy</button>
+                               <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a> 
                             </div>
                         </div>
                     </li>
@@ -342,13 +339,12 @@
                             <!-- Tiêu đề -->
                             <div class="ml-2">
                                 <span class="d-block font-weight-bold mb-2">Slack Ltd</span>
-                                <span class="text-xs">Paid on: May 4th, 2023</span>
                             </div>
 
                             <!-- Giá -->
                             <div class="ml-auto mr-2 text-center">
                                 <span class="d-block text-danger">$500.00</span>
-                                <button class="btn btn-primary">Buy</button>
+                                <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a> 
                             </div>
                         </div>
                     </li>
@@ -357,14 +353,14 @@
             </div>
 
             <!-- Phần 2 -->
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6 border">
-                <div class="mt-4">
-                    <iframe src="https://example.com/game" width="730" height="550"></iframe>
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8 border">
+                <div class="mt-4" id="gameContainer">
+                    <iframe id="gameFrame" width="970" height="670" style="display:none;"></iframe>
                 </div>
             </div>
 
             <!-- Phần 3 -->
-            <div class="col-4 col-sm-4 col-md-4 col-lg-4 border">
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 border">
 
                 <div class="d-flex justify-content-center">
                     <button class="btn btn-primary mr-2">Pause</button>
@@ -424,6 +420,16 @@
         </div>
 
     </div>
+
+    <script>
+        $(document).ready(function() {
+    $(".game-button").click(function() {
+        var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
+        $("#gameFrame").attr("src", gameUrl); // Cập nhật src của iframe
+        $("#gameFrame").show(); // Hiển thị iframe nếu nó đang ẩn
+    });
+});
+    </script>
 
 </body>
 
