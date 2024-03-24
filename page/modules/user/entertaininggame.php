@@ -82,31 +82,6 @@
 
                 <div class="mt-4 mb-5">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <ul class="list-unstyled">
-                                <!-- Danh sách course -->
-                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 150px; background-color: #f1f4f9;">
-                                    <div class="d-flex align-items-center flex-grow-1">
-                                        <!-- Hình ảnh -->
-                                        <div class="ml-2">
-                                            <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 25%;">
-                                        </div>
-
-                                        <!-- Tiêu đề -->
-                                        <div class="ml-2">
-                                            <span class="d-block font-weight-bold mb-2">ScreenStudio App</span>
-                                            <span class="text-xs">Paid on: May 4th, 2023</span>
-                                        </div>
-
-                                        <!-- Giá -->
-                                        <div class="ml-auto mr-2 text-center">
-                                            <span class="d-block text-danger">$500.00</span>
-                                            <button class="btn btn-primary">Buy</button>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
 
                         <div class="col-lg-4 col-md-6 mb-4">
                             <ul class="list-unstyled">
@@ -127,7 +102,7 @@
                                         <!-- Giá -->
                                         <div class="ml-auto mr-2 text-center">
                                             <span class="d-block text-danger">$500.00</span>
-                                            <button class="btn btn-primary">Buy</button>
+                                            <a href="?module=user&action=payment/paymentpage"><button class="btn btn-primary">Buy</button></a>
                                         </div>
 
                                     </div>
@@ -154,7 +129,7 @@
                                         <!-- Giá -->
                                         <div class="ml-auto mr-2 text-center">
                                             <span class="d-block text-danger">$500.00</span>
-                                            <button class="btn btn-primary">Buy</button>
+                                            <a href="?module=user&action=payment/paymentpage"><button class="btn btn-primary">Buy</button></a>
                                         </div>
 
                                     </div>
@@ -181,7 +156,35 @@
                                         <!-- Giá -->
                                         <div class="ml-auto mr-2 text-center">
                                             <span class="d-block text-danger">$500.00</span>
-                                            <button class="btn btn-primary">Buy</button>
+                                            <a href="?module=user&action=payment/paymentpage"><button class="btn btn-primary">Buy</button></a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <ul class="list-unstyled">
+                                <!-- Danh sách course -->
+                                <li class="p-2 mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 150px; background-color: #f1f4f9;">
+                                    <div class="d-flex align-items-center flex-grow-1">
+                                        <!-- Hình ảnh -->
+                                        <div>
+                                            <img src="../page/assets/images/courses-03.jpg" alt="{product.name}" style="width: 75px; height: 75px; border-radius: 25%;">
+                                        </div>
+
+                                        <!-- Tiêu đề -->
+                                        <div class="ml-2">
+                                            <span class="d-block font-weight-bold mb-2">Slack Ltd</span>
+                                            <span class="text-xs">Paid on: May, 4th 2023</span>
+                                        </div>
+
+                                        <!-- Giá -->
+                                        <div class="ml-auto mr-2 text-center">
+                                            <span class="d-block text-danger">$500.00</span>
+                                            <a href="?module=user&action=payment/paymentpage"><button class="btn btn-primary">Buy</button></a>
+
                                         </div>
 
                                     </div>
