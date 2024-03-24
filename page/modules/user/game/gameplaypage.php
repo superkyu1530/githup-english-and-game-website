@@ -210,7 +210,7 @@
 
         <div class="d-flex align-items-center">
             <h1 class="mt-4 mb-4">
-                <a class="home-link active" data-toggle="tab" href="#tab-panel-4">HOME</a>
+                <a href="?module=user&action=userClient">HOME</a>
             </h1>
             <div class="ml-auto button-container">
                 <button class=" mt-4 mr-4 rounded-circle overflow-hidden" style="width: 50px; height: 50px; padding: 0;" onclick="toggleInfoPanel()">

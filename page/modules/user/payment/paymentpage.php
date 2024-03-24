@@ -9,139 +9,6 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-    <style>
-        .nav-link-hover:hover {
-            color: #389bf0;
-            background-color: #389bf0;
-            border-color: #007bff;
-        }
-
-        .nav-tabs .nav-item .nav-link {
-            border: none !important;
-            background-color: transparent !important;
-        }
-
-        .nav-tabs .nav-item .nav-link.active {
-            border: none !important;
-            border-bottom: 5px solid #389bf0 !important;
-        }
-
-        /* Thêm shadow cho thẻ li */
-        .nav-tabs .nav-item .nav-link {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            text-decoration: none;
-        }
-
-        /* Xóa gạch chân khi hover và active */
-        .home-link:hover,
-        .home-link:active {
-            text-decoration: none;
-        }
-
-        .button-container {
-            position: relative;
-        }
-
-        .info-panel {
-            position: absolute;
-            top: calc(100% + 10px);
-            right: -50px;
-            z-index: 2;
-            background-color: white;
-            padding: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-        }
-
-        .countdown-item {
-            text-align: center;
-            margin: 0 10px;
-        }
-
-        .countdown-item span {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-    </style>
-
-    <script>
-        $(document).ready(function() {
-            $(".nav-link").on("shown.bs.tab", function(e) {
-                var targetPane = $(e.target).attr("href");
-                $(".tab-pane").removeClass("show active"); // Xóa lớp "show" và "active" khỏi tất cả các tab-pane
-                $(targetPane).addClass("show active"); // Thêm lớp "show" và "active" vào tab-pane đang được chọn
-            });
-
-            $(".home-link").click(function(e) {
-                e.preventDefault();
-                $(".tab-pane").removeClass("show active");
-                $($(this).attr("href")).addClass("show active");
-                // Tải lại trang
-                location.reload();
-            });
-        });
-
-        function toggleInfoPanel() {
-            var infoPanel = document.getElementById("infoPanel");
-            if (infoPanel.style.display === "none") {
-                infoPanel.style.display = "block";
-            } else {
-                infoPanel.style.display = "none";
-            }
-        }
-
-        // Thiết lập thời gian bắt đầu và thời gian kết thúc
-        var startTime = new Date().getTime();
-        var endTime = startTime + (30 * 1000); // 30 giây
-
-        // Cập nhật đồng hồ đếm ngược mỗi giây
-        var countdown = setInterval(function() {
-            // Lấy thời gian hiện tại
-            var now = new Date().getTime();
-
-            // Tính toán khoảng cách thời gian giữa hiện tại và thời gian kết thúc
-            var distance = endTime - now;
-
-            // Tính toán các đơn vị thời gian
-            var seconds = Math.floor(distance / 1000);
-
-            // Hiển thị giá trị vào các phần tử HTML
-            document.getElementById("hours").innerHTML = "";
-            document.getElementById("minutes").innerHTML = "";
-            document.getElementById("seconds").innerHTML = seconds + " seconds";
-
-            // Kiểm tra nếu đã kết thúc thời gian, dừng đồng hồ đếm ngược và hiển thị bảng
-            if (distance < 0) {
-                clearInterval(countdown);
-                document.getElementById("hours").innerHTML = "";
-                document.getElementById("minutes").innerHTML = "";
-                document.getElementById("seconds").innerHTML = "EXPIRED";
-                document.getElementById("tableDiv").classList.remove("d-none");
-            }
-        }, 1000);
-
-        function replayCountdown() {
-            // Đặt giá trị ban đầu cho các đối tượng đếm ngược
-            var hoursElement = document.getElementById("hours");
-            var minutesElement = document.getElementById("minutes");
-            var secondsElement = document.getElementById("seconds");
-
-            hoursElement.innerHTML = "00";
-            minutesElement.innerHTML = "00";
-            secondsElement.innerHTML = "00";
-
-            // Bắt đầu đếm ngược từ đầu
-            startCountdown();
-        }
-    </script>
-
 </head>
 
 <body>
@@ -150,7 +17,7 @@
 
         <div class="d-flex align-items-center">
             <h1 class="mt-4 mb-4">
-                <a class="home-link active" data-toggle="tab" href="#tab-panel-4">HOME</a>
+                <a href="?module=user&action=userClient">HOME</a>
             </h1>
             <div class="ml-auto button-container">
                 <button class=" mt-4 mr-4 rounded-circle overflow-hidden" style="width: 50px; height: 50px; padding: 0;" onclick="toggleInfoPanel()">
@@ -200,8 +67,7 @@
 
         </div>
 
-
-        <div class="row">
+        <div class="row mt-2">
 
             <!-- Phần 1 -->
             <div class="col-3 col-sm-3 col-md-3 col-lg-3">
@@ -239,14 +105,14 @@
                                     <th scope="row" class="text-left">
                                         <ul class="list-unstyled">
                                             <li class="mt-2 mb-2">Subtotal</li>
-                                            <li class="mt-2 mb-2 text-sm">Add promotional code</li>
+                                            <li class="mt-2 mb-2 text-sm">Code orders</li>
                                         </ul>
                                     </th>
                                     <td class="text-right">
                                         <ul class="list-unstyled">
                                             <li class="mt-2 mb-2">$500.00</li>
                                             <li class="mt-2 mb-2">
-
+                                                AGFDRE
                                             </li>
                                         </ul>
                                     </td>
@@ -268,132 +134,103 @@
 
             <!-- Phần 2 -->
             <div class="col-9 col-sm-9 col-md-9 col-lg-9">
-                <div class="mt-2 ml-5">
+                <div class="mt-2 ml-2">
                     <h3> Payment by card</h3>
                 </div>
 
                 <div class="d-flex justify-content-center">
 
-                    <div class="mt-3 mb-4 border shadow" style="width: 800px; height: 550px; border-radius: 25px;">
+                    <div class="mt-3 mb-4 border shadow" style="width: 1000px; height: 550px; border-radius: 25px;">
 
-                        <!-- email -->
-                        <div class="d-flex justify-content-center mt-4">
-                            <div class="p-2 border d-flex align-items-center" style="width: 400px; height: 50px; border-radius: 10px; background-color: #f7f7f7">
-                                <span>
-                                    <strong>Email</strong>
-                                </span>
-                                <span class="ml-5 mr-5">examle@gmail.com</span>
-                            </div>
-                        </div>
-
-                        <!-- Thông tin thẻ -->
-                        <div class="d-flex justify-content-center mt-4">
-                            <div class="d-flex flex-column">
-
-                                <div class="mb-2">
-                                    <span>Card information</span>
-                                </div>
-
-                                <div>
-                                    <div>
-                                        <div>
-                                            <input type="text" class="p-2 border d-flex justify-content-between" placeholder="1234 1234 1234 1234" style="width: 400px; height: 50px; border-radius: 10px 10px 0 0;" id="numberInput" maxlength="19">
-                                            <script>
-                                                var numberInput = document.getElementById('numberInput');
-
-                                                numberInput.addEventListener('input', function(event) {
-                                                    var inputValue = event.target.value;
-                                                    var numericValue = inputValue.replace(/\D/g, '');
-                                                    var formattedValue = formatNumber(numericValue);
-                                                    event.target.value = formattedValue;
-                                                });
-
-                                                function formatNumber(value) {
-                                                    var formattedValue = '';
-                                                    for (var i = 0; i < value.length; i++) {
-                                                        if (i > 0 && i % 4 === 0) {
-                                                            formattedValue += ' ';
-                                                        }
-                                                        formattedValue += value.charAt(i);
-                                                    }
-                                                    return formattedValue;
-                                                }
-                                            </script>
-                                        </div>
-
-                                        <div class="d-flex justify-content-between">
-                                            <input type="text" class="p-2 border d-flex align-items-center" placeholder="MM/YY" style="width: 200px; height: 50px; border-radius: 0 0 0 10px;"></input>
-                                            <input type="text" class="p-2 border d-flex align-items-center" placeholder="CVC" style="width: 200px; height: 50px; border-radius: 0 0 10px 0;"></input>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Tên chủ thẻ -->
+                        <!-- Chuyển khoản ngân hàng -->
                         <div class="d-flex justify-content-center mt-3">
                             <div class="d-flex flex-column">
 
                                 <div class="mb-2">
-                                    <span>Account name</span>
+                                    <span class="font-weight-bold">Bank transfer</span>
                                 </div>
 
-                                <input type="text" class="p-2 border d-flex align-items-center" placeholder="First and last name" style="width: 400px; height: 50px; border-radius: 10px;"></input>
-                            </div>
-                        </div>
-
-                        <!-- Quốc gia hoặc khu vực -->
-                        <div>
-                            <div class="d-flex justify-content-center mt-4">
-                                <div class="d-flex flex-column">
-                                    <div class="mb-2">
-                                        <span>Country or region</span>
+                                <div class="d-flex mt-2">
+                                    <div class="p-2 mr-2 border d-flex flex-column align-items-start" style="width: 400px; height: 70px; border-radius: 10px; background-color: #f7f7f7">
+                                        <span class="d-block">Account number</span>
+                                        <span class="ml-5 mr-5 text-danger font-weight-bold">1234 5678</span>
                                     </div>
 
-                                    <select id="countrySelect" class="p-2 border d-flex align-items-center form-select" style="width: 400px; height: 50px; border-radius: 10px;">
-                                        <option selected disabled>Loading countries...</option>
-                                    </select>
+                                    <div class="p-2 mr-2 border d-flex flex-column align-items-start" style="width: 400px; height: 70px; border-radius: 10px; background-color: #f7f7f7">
+                                        <span class="d-block">Account name</span>
+                                        <span class="ml-5 mr-5 text-danger font-weight-bold">Nguyen Van A</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mt-2">
+                                    <div class="p-2 mr-2 border d-flex flex-column align-items-start" style="width: 400px; height: 70px; border-radius: 10px; background-color: #f7f7f7">
+                                        <span class="d-block text-danger">Content</span>
+                                        <span class="ml-5 mr-5 text-danger font-weight-bold">AGFDRE</span>
+                                    </div>
+
+                                    <div class="p-2 mr-2 border d-flex flex-column align-items-start" style="width: 400px; height: 70px; border-radius: 10px; background-color: #f7f7f7">
+                                        <span class="d-block">Bank</span>
+                                        <span class="ml-5 mr-5 text-danger font-weight-bold">KOREA BANK</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Thông tin tài khoản ngân hàng dùng thanh toán -->
+                        <div>
+                            <div class="d-flex justify-content-center mt-3">
+                                <div class="d-flex flex-column">
+
+                                    <div class="mb-2">
+                                        <span class="font-weight-bold">Payment bank account</span>
+                                    </div>
+                                    <div class="d-flex mt-2">
+
+                                        <input type="text" class="p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="money transfer account" style="width: 400px; height: 50px; border-radius: 10px;">
+
+                                        <div class="p-2 mr-2 border d-flex flex-column align-items-start" style="width: 400px; height: 75px; border-radius: 10px; background-color: #f7f7f7">
+                                            <span class="d-block">Email</span>
+                                            <span class="ml-5">example@gmail.com</span>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                            <script>
-                                var countrySelect = document.getElementById('countrySelect');
-
-                                // Gửi yêu cầu GET đến API để lấy danh sách quốc gia
-                                fetch('https://restcountries.com/v3.1/all')
-                                    .then(response => {
-                                        if (!response.ok) {
-                                            throw new Error('Network response was not OK');
-                                        }
-                                        return response.json();
-                                    })
-                                    .then(data => {
-                                        var countries = Object.values(data);
-
-                                        // Sắp xếp danh sách quốc gia theo thứ tự bảng chữ cái
-                                        countries.sort((a, b) => a.name.common.localeCompare(b.name.common));
-
-                                        // Xóa các tùy chọn hiện tại trong kiểm chọn
-                                        countrySelect.innerHTML = '';
-
-                                        // Tạo và thêm các tùy chọn đã được sắp xếp vào kiểm chọn
-                                        countries.forEach(function(country) {
-                                            var option = document.createElement('option');
-                                            option.value = country.name.common;
-                                            option.textContent = country.name.common;
-                                            countrySelect.appendChild(option);
-                                        });
-                                    })
-                                    .catch(error => {
-                                        console.log('Error:', error);
-                                    });
-                            </script>
                         </div>
+
                         <!-- check -->
-                        <div class="d-flex justify-content-center mt-4">
-                            <button class="btn btn-success"> <i class="fa fa-check"></i> Check</button>
+                        <div class="d-flex justify-content-center mt-5">
+                            <button class="btn btn-success" data-toggle="modal" data-target="#successModal">
+                                <i class="fa fa-check"></i> Check
+                            </button>
                         </div>
+
+                        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="successModalLabel">Notification</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <i class="fa fa-check"></i> Submitted successfully!
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="navigateToUserClient()">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            function navigateToUserClient() {
+                                window.location.href = "?module=user&action=userClient";
+                            }
+                        </script>
+
                     </div>
                 </div>
 
