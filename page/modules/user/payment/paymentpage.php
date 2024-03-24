@@ -140,7 +140,7 @@
 
                 <div class="d-flex justify-content-center">
 
-                    <div class="mt-3 mb-4 border shadow" style="width: 1000px; height: 550px; border-radius: 25px;">
+                    <div class="mt-3 mb-4 border shadow" style="width: 1000px; height: 500px; border-radius: 25px;">
 
                         <!-- Chuyển khoản ngân hàng -->
                         <div class="d-flex justify-content-center mt-3">
