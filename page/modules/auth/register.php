@@ -139,14 +139,14 @@ $msgType = getFlashData('msg_type');
                                 <input type="text" class="mt-3 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Password" style="width: 100%; height: 50px; border-radius: 10px;">
                                 <button type="button" class="btn btn-primary mt-4 font-weight-bold" style="width: 150px; height: 50px; border-radius: 10px;">Sign Up</button>
                                 <span class="mt-4">
-                                    Don't have an account?
-                                    <a href="#" class="text-decoration-none">
-                                        <strong class="text-primary">Sign Up here</strong>
+                                    Do you already have an account?
+                                    <a href="?module=auth&action=login" class="text-decoration-none">
+                                        <strong class="text-primary">Sign In here</strong>
                                     </a>
                                 </span>
-                                <a href="?module=auth&action=login" class="text-decoration-none">
+                                <!-- <a href="?module=auth&action=login" class="text-decoration-none">
                                     <button type="button" class="btn mt-2 font-weight-bold shadow" style="width: 280px; height: 50px; border-radius: 5px;">Do you have an account yet?</button>
-                                </a>
+                                </a> -->
 
                             </div>
                         </div>
