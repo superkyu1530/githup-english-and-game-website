@@ -76,9 +76,11 @@
             <h1 class="mt-4 mb-4">
                 <a class="home-link active" data-toggle="tab" href="#tab-panel-4">HOME</a>
             </h1>
+
             <h1 class="mt-4 mb-4">
-                <a href="?module=admin&action=adminpage">ADMIN</a>
+                <a href="?module=admin&action=adminloginpage">Login</a>
             </h1>
+
             <div class="ml-auto button-container">
                 <button class=" mt-4 mr-4 rounded-circle overflow-hidden" style="width: 50px; height: 50px; padding: 0;" onclick="toggleInfoPanel()">
                     <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border-radius: 50%; overflow: hidden;">
@@ -179,24 +181,24 @@
         <div class="tab-content mt-4">
 
             <div id="tab-panel-4" class="tab-pane fade show active">
-                <?php include 'userpage.php'; ?>
+                1
             </div>
 
             <div id="tab-panel-0" class="tab-pane fade">
-                <?php include 'course.php'; ?>
+                2
             </div>
 
             <div id="tab-panel-1" class="tab-pane fade">
-                <?php include 'exercise.php'; ?>
+                3
 
             </div>
 
             <div id="tab-panel-2" class="tab-pane fade">
-                <?php include 'entertaininggame.php'; ?>
+                4
             </div>
 
             <div id="tab-panel-3" class="tab-pane fade">
-                <?php include 'learningsuppost.php'; ?>
+                5
             </div>
 
         </div>

@@ -1,43 +1,43 @@
 <?php
-if(!defined('_CODE')){
-    die('Access denied...');
+if (!defined('_CODE')) {
+  die('Access denied...');
 }
 
 //kiem tra trang thai dang nhap
 $checkLogin = false;
-if(getSession('loginToken')){
-    $tokenLogin = getSession('loginToken');
+if (getSession('loginToken')) {
+  $tokenLogin = getSession('loginToken');
 
-    //kiem tra voi database
-    $queryToken = oneRaw("SELECT user_Id FROM tokenlogin WHERE token = '$tokenLogin' ");
+  //kiem tra voi database
+  $queryToken = oneRaw("SELECT user_Id FROM tokenlogin WHERE token = '$tokenLogin' ");
 
-    if(!empty($queryToken)){
-        $checkLogin = true;
-    } else {
-        removeSession('loginToken');
-    }
+  if (!empty($queryToken)) {
+    $checkLogin = true;
+  } else {
+    removeSession('loginToken');
+  }
 }
 
 //if(!$checkLogin){
-  //  redirect('?module=user&action=userClient');
+//  redirect('?module=user&action=userClient');
 //}
 
 //quy trinh dang nhap
-if(isPost()){
+if (isPost()) {
   $filterAll = filter();
-  if(!empty(trim($filterAll['email'])) && !empty(trim($filterAll['password']))){
-    $email =$filterAll['email'];
-    $password =$filterAll['password'];
+  if (!empty(trim($filterAll['email'])) && !empty(trim($filterAll['password']))) {
+    $email = $filterAll['email'];
+    $password = $filterAll['password'];
 
     $userQuery = oneRaw("SELECT password, id FROM users WHERE email = '$email'");
 
-    if(!empty($userQuery)){
+    if (!empty($userQuery)) {
       $passwordHash = $userQuery['password'];
       $userId = $userQuery['id'];
-      if(password_verify($password,$passwordHash)){
+      if (password_verify($password, $passwordHash)) {
 
         //tao token login
-        $tokenLogin = sha1(uniqid().time());
+        $tokenLogin = sha1(uniqid() . time());
 
         //Insert vao bang users.loginToken
         $dataInsert = [
@@ -46,34 +46,31 @@ if(isPost()){
           'create_at' => date('Y-m-d H:i:s')
         ];
 
-        $insertStatus = insert('tokenlogin',$dataInsert);
-        if($insertStatus){
+        $insertStatus = insert('tokenlogin', $dataInsert);
+        if ($insertStatus) {
           //Insert thanh cong
 
           //Luu tokeLogin vao session
-          setSession('loginToken',$tokenLogin);
+          setSession('loginToken', $tokenLogin);
 
           redirect('?module=user&action=userClient');
         } else {
-          setFlashData('msg','Unable to login, please try again later');
-          setFlashData('msg_type','danger');
+          setFlashData('msg', 'Unable to login, please try again later');
+          setFlashData('msg_type', 'danger');
         }
-        
-      } else{
-        setFlashData('msg','Incorrect password');
-        setFlashData('msg_type','danger');
+      } else {
+        setFlashData('msg', 'Incorrect password');
+        setFlashData('msg_type', 'danger');
         redirect('?module=auth&action=login');
       }
-
-    } else{
-      setFlashData('msg','Email does not exist');
-      setFlashData('msg_type','danger');
+    } else {
+      setFlashData('msg', 'Email does not exist');
+      setFlashData('msg_type', 'danger');
       redirect('?module=auth&action=login');
     }
-
-  } else{
-    setFlashData('msg','Please enter your email and password!');
-    setFlashData('msg_type','danger');
+  } else {
+    setFlashData('msg', 'Please enter your email and password!');
+    setFlashData('msg_type', 'danger');
     redirect('?module=auth&action=login');
   }
 }
@@ -85,27 +82,27 @@ $msgType = getFlashData('msg_type');
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Grad School HTML5 Template</title>
-    
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <title>Grad School HTML5 Template</title>
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-  </head>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
 
 <body>
   <!--header-->
@@ -113,63 +110,64 @@ $msgType = getFlashData('msg_type');
     <div class="logo">
       <a href="?module=home&action=homepage"><em>Grad</em> School</a>
     </div>
-</header>
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-light text-black" style="border-radius: 1rem; margin-top: 40px; ">
-          <div class="card-body">
+  </header>
 
-            <div class="mb-md-5 mt-md-4 pb-5">
+  <div class="container-fluid bg-gradient vh-100" style="background: linear-gradient(to bottom left, #724cbd, #ed8c61);">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
 
-              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-black-50 mb-5">Enter your email and password!</p>
-              <?php 
-                    if(!empty($msg)){
-                       getSmg($msg,$msgType);
-                    }
-
-                ?>
-              <form action="" method="post">
-
-                <div class="form-group mg-form">
-                  <label for="">Email</label>
-                  <input type="email" class="form-control" placeholder="Enter email address" name="email">
-                </div>
-
-                <div class="form-group mg-form">
-                  <label for="">Password</label>
-                  <input type="password" class="form-control" placeholder="Enter password" name="password">
-                </div>
-
-                <button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
-
-                <hr>
-                <div>
-                <p class="mb-0">Forgot password?<a href="?module=auth&action=forgot" class="text-black-50 fw-bold"> Here!</a>
-                </p>
-
-                <p class="mb-0">Do not have an account? <a href="?module=auth&action=signup" class="text-black-50 fw-bold"> Sign Up</a>
-                </p>
-                </div>
-
-              </form>
+      <div>
+        <div class="row mb-2">
+          <div class="col">
+            <div class="text-light font-weight-bold" style="width: 550px; height: 150px; border-radius: 20px;">
+              <div class="p-2 d-flex justify-content-center align-items-center mt-4" style="flex-direction: column;">
+                <h1>English and Game</h1>
+                <h1>Project</h1>
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="bg-white" style="width: 550px; height: 450px; border-radius: 20px;">
+              <div class="p-4 d-flex justify-content-center align-items-center" style="flex-direction: column;">
+
+                <h1>Welcome Back</h1>
+                <span>Fill out the information below in order to access your account</span>
+
+                <input type="text" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Email" style="width: 100%; height: 50px; border-radius: 10px;">
+                <input type="text" class="mt-3 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Password" style="width: 100%; height: 50px; border-radius: 10px;">
+                <button type="button" class="btn btn-primary mt-4 font-weight-bold" style="width: 150px; height: 50px; border-radius: 10px;">Sign In</button>
+                <span class="mt-4">
+                  Don't have an account?
+                  <a href="?module=auth&action=register" class="text-decoration-none">
+                    <strong class="text-primary">Sign Up here</strong>
+                  </a>
+                </span>
+                <a href="#forget" class="text-decoration-none">
+                  <button type="button" class="btn mt-2 font-weight-bold shadow" style="width: 180px; height: 50px; border-radius: 5px;">Forget Password</button>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </div>
+
   </div>
-</section>
-<footer>
+
+  <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p><i class="fa fa-copyright"></i> Copyright 2024 by Grad School  
+          <p><i class="fa fa-copyright"></i> Copyright 2024 by Grad School
         </div>
       </div>
     </div>
   </footer>
 </body>
+
 </html>
