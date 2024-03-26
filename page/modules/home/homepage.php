@@ -1,370 +1,127 @@
-<?php
-if (!defined('_CODE')) {
-  die('Access denied...');
-}
-
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-  <title>Grad School HTML5 Template</title>
+  <style>
+    .custom-border {
+      position: relative;
+      border: 10px solid #ef47f2;
+      height: 100vh;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    .custom-border1 {
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      border: 10px solid #e49be3;
+      box-sizing: border-box;
+    }
 
-  <!-- Additional CSS Files -->
-  <link rel="stylesheet" href="assets/css/fontawesome.css">
-  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
-  <link rel="stylesheet" href="assets/css/owl.css">
-  <link rel="stylesheet" href="assets/css/lightbox.css">
-  <!--
+    .box1 {
+      border-width: 10px 10px 0 10px;
+      border-style: solid;
+      border-color: #2e58b1;
+      box-sizing: border-box;
+    }
 
-TemplateMo 557 Grad School
+    .box2 {
+      border-top: 10px solid #2e58b1;
+      box-sizing: border-box;
+    }
 
-https://templatemo.com/tm-557-grad-school
+    .box3 {
+      border-width: 0 10px 10px 10px;
+      border-style: solid;
+      border-color: #2e58b1;
+      box-sizing: border-box;
+    }
 
--->
+    .box4 {
+      border-top: 10px solid #2e58b1;
+      box-sizing: border-box;
+    }
+  </style>
+
 </head>
 
 <body>
 
+  <div class="container-fluid bg-white" style="padding: 0; margin:0">
 
-  <!--header-->
-  <header class="main-header clearfix" role="header">
-    <div class="logo">
-      <a href="?module=home&action=homepage"><em>Grad</em> School</a>
-    </div>
-    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
-    <nav id="menu" class="main-nav" role="navigation">
-      <ul class="main-menu">
-        <li><a href="?module=user&action=userClient">Home</a></li>
-        <li class="has-submenu"><a href="#section2">About Us</a>
-          <ul class="sub-menu">
-            <li><a href="#section2">Who we are?</a></li>
-            <li><a href="#section3">What we do?</a></li>
-            <li><a href="#section3">How it works?</a></li>
-          </ul>
-        </li>
-        <li><a href="#section4">Courses</a></li>
-        <li> <a href="?module=auth&action=login">Sign In Here!</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="custom-border">
+      <div class="custom-border1">
 
-  <!-- ***** Main Banner Area Start ***** -->
-  <section class="section main-banner" id="top" data-section="section1">
-    <video autoplay muted loop id="bg-video">
-      <source src="assets/images/course-video.mp4" type="video/mp4" />
-    </video>
+        <div class="bg-dark" style="width:100%; height:100%;">
 
-    <div class="video-overlay header-text">
-      <div class="caption">
-        <h6>classroom of the future </h6>
-        <h2><em>Choose</em> Your Classroom</h2>
-        <div class="main-button">
-          <div class="scroll-to-section"><a href="#section2">Discover more</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ***** Main Banner Area End ***** -->
+          <div class=" d-flex justify-content-center ">
 
+            <!-- Bảng thông tin game -->
+            <div class="mt-4">
 
-  <section class="features">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-12">
-          <div class="features-post">
-            <div class="features-content">
-              <div class="content-show">
-                <h4><i class="fa fa-pencil"></i>All Courses</h4>
-              </div>
-              <div class="content-hide">
-                <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
-                <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
-                <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-12">
-          <div class="features-post second-features">
-            <div class="features-content">
-              <div class="content-show">
-                <h4><i class="fa fa-graduation-cap"></i>Virtual Class</h4>
-              </div>
-              <div class="content-hide">
-                <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
-                <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
-                <div class="scroll-to-section"><a href="#section3">Details</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-12">
-          <div class="features-post third-features">
-            <div class="features-content">
-              <div class="content-show">
-                <h4><i class="fa fa-book"></i>Real Meeting</h4>
-              </div>
-              <div class="content-hide">
-                <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
-                <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
-                <div class="scroll-to-section"><a href="#section4">Read More</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section why-us" data-section="section2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Why choose Grad School?</h2>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div id='tabs'>
-            <ul>
-              <li><a href='#tabs-1'>Best Education</a></li>
-              <li><a href='#tabs-2'>Top Management</a></li>
-              <li><a href='#tabs-3'>Quality Meeting</a></li>
-            </ul>
-            <section class='tabs-content'>
-              <article id='tabs-1'>
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src="assets/images/choose-us-image-01.png" alt="">
-                  </div>
-                  <div class="col-md-6">
-                    <h4>Best Education</h4>
-                    <p>Grad School is free educational HTML template with Bootstrap 4.5.2 CSS layout. Feel free to use it for educational or commercial purposes. You may want to make <a href="https://paypal.me/templatemo" target="_parent" rel="sponsored">a little donation</a> to TemplateMo. Please tell your friends about us. Thank you.</p>
+              <div class=" row box1" style="width: 650px; height: 200px;">
+                <div class="col mt-2 ml-2" style="background: #2d2d83;">
+                  <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <span class="font-weight-bold" style="font-size: 100px; color: #eb1a23;"> 암 </span>
+                    <span class="font-weight-bold" style="font-size: 100px; color: #f87f2a;"> 기 </span>
+                    <span class="font-weight-bold" style="font-size: 100px; color: #fdf004;"> 해 </span>
+                    <span class="ml-5 font-weight-bold" style="font-size: 100px; color: #2bac56;"> 보 </span>
+                    <span class="font-weight-bold" style="font-size: 100px; color: #03a0e7;"> 카 </span>
+                    <span class="font-weight-bold" style="font-size: 100px; color: white;">?</span>
                   </div>
                 </div>
-              </article>
-              <article id='tabs-2'>
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src="assets/images/choose-us-image-02.png" alt="">
-                  </div>
-                  <div class="col-md-6">
-                    <h4>Top Level</h4>
-                    <p>You can modify this HTML layout by editing contents and adding more pages as you needed. Since this template has options to add dropdown menus, you can put many HTML pages.</p>
-                    <p>Suspendisse tincidunt, magna ut finibus rutrum, libero dolor euismod odio, nec interdum quam felis non ante.</p>
+              </div>
+
+              <div class="row" style=" width:650px; height:200px;">
+
+                <div class="box2 col">
+                  <div class=" d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <!-- nội dung -->
                   </div>
                 </div>
-              </article>
-              <article id='tabs-3'>
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src="assets/images/choose-us-image-03.png" alt="">
-                  </div>
-                  <div class="col-md-6">
-                    <h4>Quality Meeting</h4>
-                    <p>You are NOT allowed to redistribute this template ZIP file on any template collection website. However, you can use this template to convert into a specific theme for any kind of CMS platform such as WordPress. For more information, you shall <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact TemplateMo</a> now.</p>
+
+                <div class="box3 col" style=" background: #2d2d83;">
+                  <div class="d-flex justify-content-center align-items-center" style="height: 100%; flex-direction: column;">
+                    <span class="font-weight-bold" style="font-size: 25px; color: yellow;">로그인</span>
+                    <a href="?module=auth&action=login"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">Admin</span></a>
+                    <a href="?module=user&action=gameplaypage"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">User</span></a>
                   </div>
                 </div>
-              </article>
-            </section>
+
+                <div class="box4 col">
+                  <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <!-- nội dung -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ảnh game -->
+          <div class="d-flex justify-content-center align-items-center mb-4">
+            <div>
+              <img src="../page/assets/images/game.png" alt="{product.name}" style="width: 1400px; max-height: 290px;">
+            </div>
           </div>
         </div>
+
       </div>
     </div>
-  </section>
 
-  <section class="section courses" data-section="section4">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Choose Your Course</h2>
-          </div>
-        </div>
-        <div class="owl-carousel owl-theme">
-          <div class="item">
-            <img src="assets/images/courses-01.jpg" alt="Course #1">
-            <div class="down-content">
-              <h4>Digital Marketing</h4>
-              <p>You can get free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.</p>
-              <div class="author-image">
-                <img src="assets/images/author-01.png" alt="Author 1">
-              </div>
-              <div class="text-button-pay">
-                <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-02.jpg" alt="Course #2">
-            <div class="down-content">
-              <h4>Business World</h4>
-              <p>Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.</p>
-              <div class="author-image">
-                <img src="assets/images/author-02.png" alt="Author 2">
-              </div>
-              <div class="text-button-free">
-                <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-03.jpg" alt="Course #3">
-            <div class="down-content">
-              <h4>Media Technology</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div class="author-image">
-                <img src="assets/images/author-03.png" alt="Author 3">
-              </div>
-              <div class="text-button-pay">
-                <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-04.jpg" alt="Course #4">
-            <div class="down-content">
-              <h4>Communications</h4>
-              <p>Download free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.</p>
-              <div class="author-image">
-                <img src="assets/images/author-04.png" alt="Author 4">
-              </div>
-              <div class="text-button-free">
-                <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-05.jpg" alt="">
-            <div class="down-content">
-              <h4>Business Ethics</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div class="author-image">
-                <img src="assets/images/author-05.png" alt="">
-              </div>
-              <div class="text-button-pay">
-                <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-01.jpg" alt="">
-            <div class="down-content">
-              <h4>Photography</h4>
-              <p>Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.</p>
-              <div class="author-image">
-                <img src="assets/images/author-01.png" alt="">
-              </div>
-              <div class="text-button-free">
-                <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-02.jpg" alt="">
-            <div class="down-content">
-              <h4>Web Development</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div class="author-image">
-                <img src="assets/images/author-02.png" alt="">
-              </div>
-              <div class="text-button-free">
-                <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-03.jpg" alt="">
-            <div class="down-content">
-              <h4>Learn HTML CSS</h4>
-              <p>You can get free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.</p>
-              <div class="author-image">
-                <img src="assets/images/author-03.png" alt="">
-              </div>
-              <div class="text-button-pay">
-                <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-04.jpg" alt="">
-            <div class="down-content">
-              <h4>Social Media</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div class="author-image">
-                <img src="assets/images/author-04.png" alt="">
-              </div>
-              <div class="text-button-pay">
-                <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-05.jpg" alt="">
-            <div class="down-content">
-              <h4>Digital Arts</h4>
-              <p>Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.</p>
-              <div class="author-image">
-                <img src="assets/images/author-05.png" alt="">
-              </div>
-              <div class="text-button-free">
-                <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/images/courses-01.jpg" alt="">
-            <div class="down-content">
-              <h4>Media Streaming</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div class="author-image">
-                <img src="assets/images/author-01.png" alt="">
-              </div>
-              <div class="text-button-pay">
-                <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <p><i class="fa fa-copyright"></i> Copyright 2020 by Grad School
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script src="/page/modules/vendor/jquery/jquery.min.js"></script>
-
-
-
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/lightbox.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/video.js"></script>
-  <script src="assets/js/slick-slider.js"></script>
-  <script src="assets/js/custom.js"></script>
 </body>
 
 </html>

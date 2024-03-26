@@ -69,6 +69,31 @@
             font-size: 2rem;
             font-weight: bold;
         }
+
+        /* Tùy chỉnh thanh cuộn */
+        ::-webkit-scrollbar {
+            width: 6px;
+            /* Chiều rộng của thanh cuộn */
+            height: 6px;
+            /* Chiều cao của thanh cuộn */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            /* Màu nền của thanh cuộn */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #888;
+            /* Màu của thanh cuộn */
+            border-radius: 4px;
+            /* Độ cong viền của thanh cuộn */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+            /* Màu của thanh cuộn khi di chuột qua */
+        }
     </style>
 
     <script>
@@ -208,58 +233,115 @@
 
     <div class="container-fluid">
 
-        <div class="d-flex align-items-center">
-            <h1 class="mt-4 mb-4">
-                <a href="?module=user&action=userClient">HOME</a>
-            </h1>
-            <div class="ml-auto button-container">
-                <button class=" mt-4 mr-4 rounded-circle overflow-hidden" style="width: 50px; height: 50px; padding: 0;" onclick="toggleInfoPanel()">
-                    <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border-radius: 50%; overflow: hidden;">
-                        <img src="../page/assets/images/courses-02.jpg" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="d-flex align-items-center" style="width: 100%; height: 180px;">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <!-- Phần 1 -->
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 130px; overflow-y: auto;">
+                        <div>
+                            <ul class="list-unstyled custom-scrollbar" id="listItems">
+                                <li class="mt-2" data-content="Nội dung 1">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    list 1
+                                </li>
+                                <li class="mt-2" data-content="Nội dung 2">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    list 2
+                                </li>
+                                <li class="mt-2" data-content="Nội dung 3">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    list 3
+                                </li>
+                                <li class="mt-2" data-content="Nội dung 4">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    list 4
+                                </li>
+                                <li class="mt-2" data-content="Nội dung 5">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    list 5
+                                </li>
+                                <li class="mt-2" data-content="Nội dung 6">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    list 6
+                                </li>
+                                <li class="mt-2" data-content="Nội dung 7">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    list 7
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </button>
 
-                <!-- Bảng menu -->
-                <div id="infoPanel" class="info-panel mr-5 shadow" style="display: none; width: 350px; height: 550px; border-radius: 10px; background-color: #f1f4f9;">
-                    <!-- Your information panel content goes here -->
+                    <!-- Phần 2 -->
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" id="content">
+                        <div class="mt-2">
+                            <div id="defaultContent">chào</div>
+                        </div>
 
-                    <div>
-                        <span>Account</span>
-
-                        <ul class="list-unstyled d-flex flex-column ">
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-dollar-sign ml-2 mr-4"></i> Payment Options</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-globe ml-2 mr-4"></i> Country</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-bell ml-2 mr-4"></i> Notification Settings</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-edit ml-2 mr-4"></i> Edit Profile</li>
-
-                        </ul>
                     </div>
 
-                    <div>
-                        <span>General</span>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            $("#listItems li").click(function() {
+                                var selectedItem = $(this).data("content");
+                                $("#content").empty(); // Xoá các phần tử con của phần 2
+                                $("#content").append("<div>" + selectedItem + "</div>"); // Thêm nội dung liên quan vào phần 2
+                            });
+                        });
+                    </script>
 
-                        <ul class=" list-unstyled d-flex flex-column ">
+                    <!-- Phần 3 -->
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border">
+                        <div class="mt-2 ">
+                            <div class="border mb-2 p-2">
+                                ID
+                            </div>
 
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-question ml-2 mr-4"></i> Support</li>
+                            <div class="border p-2">
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-primary mr-2">Pause</button>
+                                    <button class="btn btn-primary" onclick="replayCountdown()">Replay</button>
+                                </div>
 
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-file ml-2 mr-4"></i> Terms of Service</li>
+                                <!-- thời gian đến ngược -->
+                                <div class="d-flex justify-content-center mt-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6 offset-md-3">
+                                                <div class="countdown">
+                                                    <div id="hours" class="countdown-item border p-2 rounded-lg"></div>
+                                                    <div id="minutes" class="countdown-item border p-2 rounded-lg"></div>
+                                                    <div id="seconds" class="countdown-item border p-2 rounded-lg"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-user-plus ml-2 mr-4"></i> Invite Friends</li>
-
-                        </ul>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <button class="btn btn-danger"> <i class="fa fa-sign-out-alt"></i> Logout</button>
                     </div>
                 </div>
             </div>
-
         </div>
-
 
         <div class="row">
 
@@ -323,7 +405,7 @@
                             <!-- Giá -->
                             <div class="ml-auto mr-2 text-center">
                                 <span class="d-block text-danger">$500.00</span>
-                               <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a> 
+                                <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a>
                             </div>
                         </div>
                     </li>
@@ -344,7 +426,7 @@
                             <!-- Giá -->
                             <div class="ml-auto mr-2 text-center">
                                 <span class="d-block text-danger">$500.00</span>
-                                <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a> 
+                                <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a>
                             </div>
                         </div>
                     </li>
@@ -423,12 +505,12 @@
 
     <script>
         $(document).ready(function() {
-    $(".game-button").click(function() {
-        var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
-        $("#gameFrame").attr("src", gameUrl); // Cập nhật src của iframe
-        $("#gameFrame").show(); // Hiển thị iframe nếu nó đang ẩn
-    });
-});
+            $(".game-button").click(function() {
+                var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
+                $("#gameFrame").attr("src", gameUrl); // Cập nhật src của iframe
+                $("#gameFrame").show(); // Hiển thị iframe nếu nó đang ẩn
+            });
+        });
     </script>
 
 </body>

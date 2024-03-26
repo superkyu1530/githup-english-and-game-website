@@ -76,9 +76,9 @@
             <h1 class="mt-4 mb-4">
                 <a class="home-link active" data-toggle="tab" href="#tab-panel-4">HOME</a>
             </h1>
-            <h1 class="mt-4 mb-4">
+            <!-- <h1 class="mt-4 mb-4">
                 <a href="?module=admin&action=adminpage">ADMIN</a>
-            </h1>
+            </h1> -->
             <div class="ml-auto button-container">
                 <button class=" mt-4 mr-4 rounded-circle overflow-hidden" style="width: 50px; height: 50px; padding: 0;" onclick="toggleInfoPanel()">
                     <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border-radius: 50%; overflow: hidden;">
@@ -87,7 +87,7 @@
                 </button>
 
                 <!-- Bảng menu -->
-                <div id="infoPanel" class="info-panel mr-5 shadow" style="display: none; width: 350px; height: 550px; border-radius: 10px; background-color: #f1f4f9;">
+                <div id="infoPanel" class="info-panel mr-5 shadow" style="display: none; width: 350px; height: 450px; border-radius: 10px; background-color: #f1f4f9;">
                     <!-- Your information panel content goes here -->
 
                     <div>
@@ -96,8 +96,6 @@
                         <ul class="list-unstyled d-flex flex-column ">
 
                             <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-dollar-sign ml-2 mr-4"></i> Payment Options</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-globe ml-2 mr-4"></i> Country</li>
 
                             <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-bell ml-2 mr-4"></i> Notification Settings</li>
 
@@ -114,8 +112,6 @@
                             <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-question ml-2 mr-4"></i> Support</li>
 
                             <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-file ml-2 mr-4"></i> Terms of Service</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-user-plus ml-2 mr-4"></i> Invite Friends</li>
 
                         </ul>
                     </div>
