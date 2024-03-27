@@ -90,7 +90,7 @@ $msgType = getFlashData('msg_type');
   <meta name="author" content="">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-  <title>Grad School HTML5 Template</title>
+  <title>Login</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -105,12 +105,7 @@ $msgType = getFlashData('msg_type');
 </head>
 
 <body>
-  <!--header-->
-  <header class="main-header clearfix" role="header">
-    <div class="logo">
-      <a href="?module=home&action=homepage"><em>Grad</em> School</a>
-    </div>
-  </header>
+
 
   <div class="container-fluid bg-gradient vh-100" style="background: linear-gradient(to bottom left, #724cbd, #ed8c61);">
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
@@ -121,7 +116,6 @@ $msgType = getFlashData('msg_type');
             <div class="text-light font-weight-bold" style="width: 550px; height: 150px; border-radius: 20px;">
               <div class="p-2 d-flex justify-content-center align-items-center mt-4" style="flex-direction: column;">
                 <h1>English and Game</h1>
-                <h1>Project</h1>
               </div>
             </div>
           </div>
@@ -159,15 +153,7 @@ $msgType = getFlashData('msg_type');
 
   </div>
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <p><i class="fa fa-copyright"></i> Copyright 2024 by Grad School
-        </div>
-      </div>
-    </div>
-  </footer>
+
 </body>
 
 </html>
