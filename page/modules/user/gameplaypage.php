@@ -184,7 +184,7 @@
 
         // Thiết lập thời gian bắt đầu và thời gian kết thúc
         var startTime = new Date().getTime();
-        var endTime = startTime + (30 * 1000); // 30 giây
+        var endTime = startTime + (5 * 60 * 1000); // 5 phút = 5 * 60 * 1000 milliseconds
 
         // Cập nhật đồng hồ đếm ngược mỗi giây
         var countdown = setInterval(function() {
@@ -195,19 +195,20 @@
             var distance = endTime - now;
 
             // Tính toán các đơn vị thời gian
-            var seconds = Math.floor(distance / 1000);
+            var minutes = Math.floor(distance / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Hiển thị giá trị vào các phần tử HTML
-            document.getElementById("hours").innerHTML = "";
-            document.getElementById("minutes").innerHTML = "";
-            document.getElementById("seconds").innerHTML = seconds + " seconds";
+            document.getElementById("hours").innerHTML = ""; // Bỏ hiển thị giờ
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0"); // Hiển thị phút
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0"); // Hiển thị giây
 
             // Kiểm tra nếu đã kết thúc thời gian, dừng đồng hồ đếm ngược và hiển thị bảng
             if (distance < 0) {
                 clearInterval(countdown);
                 document.getElementById("hours").innerHTML = "";
-                document.getElementById("minutes").innerHTML = "";
-                document.getElementById("seconds").innerHTML = "EXPIRED";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
                 document.getElementById("tableDiv").classList.remove("d-none");
             }
         }, 1000);
@@ -233,14 +234,14 @@
 
     <div class="container-fluid">
 
-        <div class="d-flex align-items-center" style="width: 100%; height: 180px;">
+        <div class="d-flex align-items-center" style="width: 100%; height: 150px;">
 
             <div class="container-fluid">
 
                 <div class="row">
 
                     <!-- Phần 1 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 130px; overflow-y: auto;">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 150px; overflow-y: auto;">
                         <div>
                             <ul class="list-unstyled custom-scrollbar" id="listItems">
                                 <li class="mt-2" data-content="Nội dung 1">
@@ -290,9 +291,9 @@
                     </div>
 
                     <!-- Phần 2 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" id="content">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" id="content" style="height: 150px;">
                         <div class="mt-2">
-                            <div id="defaultContent">chào</div>
+                            <div id="defaultContent">content</div>
                         </div>
 
                     </div>
@@ -309,33 +310,52 @@
                     </script>
 
                     <!-- Phần 3 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 150px;">
+
                         <div class="mt-2 ">
-                            <div class="border mb-2 p-2">
+
+                            <div class="border mb-2 p-2" style="height: 75px">
                                 ID
                             </div>
 
-                            <div class="border p-2">
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn btn-primary mr-2">Pause</button>
-                                    <button class="btn btn-primary" onclick="replayCountdown()">Replay</button>
+                            <div class="row">
+
+                                <!-- Nút điều khiển -->
+                                <div class="col-4">
+                                    <div class="border p-2" style="width: 170px; height: 55px;">
+
+                                        <div class="d-flex justify-content-center">
+                                            <div>
+                                                <button class="btn btn-primary mr-2" style="display: block;">Pause</button>
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-primary" onclick="replayCountdown()" style="display: block;">Replay</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!-- thời gian đến ngược -->
-                                <div class="d-flex justify-content-center mt-4">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-6 offset-md-3">
-                                                <div class="countdown">
-                                                    <div id="hours" class="countdown-item border p-2 rounded-lg"></div>
-                                                    <div id="minutes" class="countdown-item border p-2 rounded-lg"></div>
-                                                    <div id="seconds" class="countdown-item border p-2 rounded-lg"></div>
+                                <div class="col-8">
+                                    <div class="border p-2" style="width: 100%; height: 55px;">
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="countdown d-flex justify-content-between" style="height: 35px;">
+                                                            <div id="hours" class="countdown-item p-2 rounded-lg"></div>
+                                                            <div id="minutes" class="countdown-item border p-2 rounded-lg"></div>
+                                                            <div id="seconds" class="countdown-item border p-2 rounded-lg"></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
 
                     </div>
@@ -346,154 +366,219 @@
         <div class="row">
 
             <!-- Phần 1 -->
-            <div class="col-2 col-sm-2 col-md-2 col-lg-2 border">
-                <ul class="list-unstyled">
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 border p-2">
+                <div class="custom-scrollbar p-2" style="width: 100%; height: 500px; overflow-y: scroll;">
+                    <ul class="list-unstyled">
 
-                    <!-- Danh sách course -->
-                    <li class="mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 100px; background-color: #f1f4f9;">
-                        <div class="d-flex align-items-center flex-grow-1">
-                            <!-- Hình ảnh -->
-                            <div class="ml-2">
-                                <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 50px; height: 50px; border-radius: 25%;">
+                        <!-- Danh sách course -->
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 px-2">
+                                <span>1. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock-open"></i></button>
                             </div>
-
-                            <!-- Tiêu đề -->
-                            <div class="ml-2">
-                                <span class="d-block font-weight-bold mb-2">Block Puzzle</span>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>2. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock-open"></i></button>
                             </div>
-
-                            <!-- Giá -->
-                            <div class="ml-auto mr-2">
-                                <button class="btn btn-success game-button" data-game-url="..\Web Test Game\Block Puzzle\Block Puzzle.html">Play</button>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>3. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
-                        </div>
-                    </li>
-
-                    <!-- Danh sách course -->
-                    <li class="mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 100px; background-color: #f1f4f9;">
-                        <div class="d-flex align-items-center flex-grow-1">
-                            <!-- Hình ảnh -->
-                            <div class="ml-2">
-                                <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 50px; height: 50px; border-radius: 25%;">
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>4. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
-
-                            <!-- Tiêu đề -->
-                            <div class="ml-2">
-                                <span class="d-block font-weight-bold mb-2">Line Coler</span>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>5. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock-open"></i></button>
                             </div>
-
-                            <!-- Giá -->
-                            <div class="ml-auto mr-2">
-                                <button class="btn btn-success game-button" data-game-url="..\Web Test Game\Line Coler\Line Coler.html">Play</button>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>6. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
-                        </div>
-                    </li>
-
-                    <!-- Danh sách course -->
-                    <li class="mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 100px; background-color: #f1f4f9;">
-                        <div class="d-flex align-items-center flex-grow-1">
-                            <!-- Hình ảnh -->
-                            <div class="ml-2">
-                                <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 50px; height: 50px; border-radius: 25%;">
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>7. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
-
-                            <!-- Tiêu đề -->
-                            <div class="ml-2">
-                                <span class="d-block font-weight-bold mb-2">Slack Ltd</span>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>8. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
-
-                            <!-- Giá -->
-                            <div class="ml-auto mr-2 text-center">
-                                <span class="d-block text-danger">$500.00</span>
-                                <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>9. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
-                        </div>
-                    </li>
-
-                    <!-- Danh sách course -->
-                    <li class="mt-4 rounded-lg d-flex align-items-center bg-white border shadow" style="height: 100px; background-color: #f1f4f9;">
-                        <div class="d-flex align-items-center flex-grow-1">
-                            <!-- Hình ảnh -->
-                            <div class="ml-2">
-                                <img src="../page/assets/images/courses-05.jpg" alt="{product.name}" style="width: 50px; height: 50px; border-radius: 25%;">
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>10. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
-
-                            <!-- Tiêu đề -->
-                            <div class="ml-2">
-                                <span class="d-block font-weight-bold mb-2">Slack Ltd</span>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>11. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
-
-                            <!-- Giá -->
-                            <div class="ml-auto mr-2 text-center">
-                                <span class="d-block text-danger">$500.00</span>
-                                <a href="?module=user&action=paymentpage"><button class="btn btn-primary">Buy</button></a>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>12. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>13. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
+                            </div>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>14. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
+                            </div>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>15. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
+                            </div>
+                        </li>
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                            <div class="d-flex align-items-center flex-grow-1 p-2">
+                                <span>16. 게임의 이름</span>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
+                            </div>
+                        </li>
 
-                </ul>
+                    </ul>
+                </div>
             </div>
 
             <!-- Phần 2 -->
-            <div class="col-8 col-sm-8 col-md-8 col-lg-8 border">
+            <div class="col-7 col-sm-7 col-md-7 col-lg-7 border">
                 <div class="mt-4" id="gameContainer">
                     <iframe id="gameFrame" width="970" height="670" style="display:none;"></iframe>
                 </div>
             </div>
 
             <!-- Phần 3 -->
-            <div class="col-2 col-sm-2 col-md-2 col-lg-2 border">
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 border">
 
-                <div class="d-flex justify-content-center">
-                    <button class="btn btn-primary mr-2">Pause</button>
-                    <button class="btn btn-primary" onclick="replayCountdown()">Replay</button>
-                </div>
+                <div>
 
-                <!-- thời gian đến ngược -->
-                <div class="d-flex justify-content-center mt-4">
-                    <div class="container">
+                    <!-- <div id="tableDiv" class="d-none"> -->
+                    <div>
                         <div class="row">
-                            <div class="col-md-6 offset-md-3">
-                                <div class="countdown">
-                                    <div id="hours" class="countdown-item border p-2 rounded-lg"></div>
-                                    <div id="minutes" class="countdown-item border p-2 rounded-lg"></div>
-                                    <div id="seconds" class="countdown-item border p-2 rounded-lg"></div>
-                                </div>
+                            <div class="col-6 border" style="height: 520px;">
+                                <ul class="list-unstyled">
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>1. Abandon</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>2. Student</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>3. Apple</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>4. Desk</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>5. Strawberry</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="col-6 border" style="height: 520px;">
+                                <ul class="list-unstyled">
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>1. 버리다</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>2. 학생</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>3. 사과</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>4. 책상</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                        <div class="d-flex align-items-center flex-grow-1 p-2">
+                                            <span>5. 딸기</span>
+                                            <div class="form-check d-flex align-items-center ml-auto">
+                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Hiện bảng  -->
-                <div class="mt-4">
-
-                    <div id="tableDiv" class="d-none">
-                        <table class="table text-center">
-                            <thead>
-                                <tr>
-                                    <th scope="col">English</th>
-                                    <th scope="col">Korean</th>
-                                    <th scope="col">Answer</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Hello</td>
-                                    <td>안녕하세요</td>
-                                    <td><input type="checkbox" class="form-check-input ml-1"></td>
-                                </tr>
-                                <tr>
-                                    <td>Student</td>
-                                    <td>학생</td>
-                                    <td><input type="checkbox" class="form-check-input ml-1"></td>
-                                </tr>
-                                <tr>
-                                    <td>Apple</td>
-                                    <td>사과</td>
-                                    <td><input type="checkbox" class="form-check-input ml-1"></td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
 
