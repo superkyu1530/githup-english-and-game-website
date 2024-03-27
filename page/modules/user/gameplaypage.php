@@ -122,66 +122,6 @@
             }
         }
 
-        // // Thiết lập thời gian bắt đầu và thời gian kết thúc
-        // var startTime = new Date().getTime();
-        // var endTime = startTime + (60 * 60 * 1000); // 1 giờ
-
-        // // Cập nhật đồng hồ đếm ngược mỗi giây
-        // var countdown = setInterval(function() {
-        //     // Lấy thời gian hiện tại
-        //     var now = new Date().getTime();
-
-        //     // Tính toán khoảng cách thời gian giữa hiện tại và thời gian kết thúc
-        //     var distance = endTime - now;
-
-        //     // Tính toán các đơn vị thời gian
-        //     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        //     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        //     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        //     // Hiển thị giá trị vào các phần tử HTML
-        //     document.getElementById("hours").innerHTML = hours + " hours";
-        //     document.getElementById("minutes").innerHTML = minutes + " minutes";
-        //     document.getElementById("seconds").innerHTML = seconds + " seconds";
-
-        //     // Kiểm tra nếu đã kết thúc thời gian, dừng đồng hồ đếm ngược
-        //     if (distance < 0) {
-        //         clearInterval(countdown);
-        //         document.getElementById("hours").innerHTML = "";
-        //         document.getElementById("minutes").innerHTML = "";
-        //         document.getElementById("seconds").innerHTML = "EXPIRED";
-        //     }
-        // }, 1000);
-
-        // // Thiết lập thời gian bắt đầu và thời gian kết thúc
-        // var startTime = new Date().getTime();
-        // var endTime = startTime + (30 * 1000); // 30 giây
-
-        // // Cập nhật đồng hồ đếm ngược mỗi giây
-        // var countdown = setInterval(function() {
-        //     // Lấy thời gian hiện tại
-        //     var now = new Date().getTime();
-
-        //     // Tính toán khoảng cách thời gian giữa hiện tại và thời gian kết thúc
-        //     var distance = endTime - now;
-
-        //     // Tính toán các đơn vị thời gian
-        //     var seconds = Math.floor(distance / 1000);
-
-        //     // Hiển thị giá trị vào các phần tử HTML
-        //     document.getElementById("hours").innerHTML = "";
-        //     document.getElementById("minutes").innerHTML = "";
-        //     document.getElementById("seconds").innerHTML = seconds + " seconds";
-
-        //     // Kiểm tra nếu đã kết thúc thời gian, dừng đồng hồ đếm ngược
-        //     if (distance < 0) {
-        //         clearInterval(countdown);
-        //         document.getElementById("hours").innerHTML = "";
-        //         document.getElementById("minutes").innerHTML = "";
-        //         document.getElementById("seconds").innerHTML = "EXPIRED";
-        //     }
-        // }, 1000);
-
         // Thiết lập thời gian bắt đầu và thời gian kết thúc
         var startTime = new Date().getTime();
         var endTime = startTime + (5 * 60 * 1000); // 5 phút = 5 * 60 * 1000 milliseconds
@@ -234,64 +174,73 @@
 
     <div class="container-fluid">
 
-        <div class="d-flex align-items-center" style="width: 100%; height: 150px;">
+        <!-- Tên trang -->
+        <div class="d-flex align-items-center border" style="width: 100%; height: 50px">
+            <span class="ml-5 font-weight-bold">LOGO</span>
+        </div>
 
-            <div class="container-fluid">
+        <!-- Phần trên -->
+        <div class="d-flex align-items-center" style="width: 100%; height: 175px;">
+
+            <div style="width: 100%;">
 
                 <div class="row">
 
                     <!-- Phần 1 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 150px; overflow-y: auto;">
-                        <div>
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 175px; overflow-y: auto;">
+                        <div class="">
                             <ul class="list-unstyled custom-scrollbar" id="listItems">
-                                <li class="mt-2" data-content="Nội dung 1">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 1">
                                     <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    list 1
+                                    <span>1. 초등학교 영어</span>
                                 </li>
-                                <li class="mt-2" data-content="Nội dung 2">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 2">
                                     <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    list 2
+                                    <span>2. 중학교 영어</span>
                                 </li>
-                                <li class="mt-2" data-content="Nội dung 3">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 3">
                                     <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    list 3
+                                    <span>3. 고등학교 영어</span>
                                 </li>
-                                <li class="mt-2" data-content="Nội dung 4">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 4">
                                     <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    list 4
+                                    <span>4. 레벨별 영어</span>
                                 </li>
-                                <li class="mt-2" data-content="Nội dung 5">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 5">
                                     <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    list 5
+                                    <span>5. 레벨별 영어</span>
+
                                 </li>
-                                <li class="mt-2" data-content="Nội dung 6">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 6">
                                     <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    list 6
+                                    <span>6. 레벨별 영어</span>
+
                                 </li>
-                                <li class="mt-2" data-content="Nội dung 7">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 7">
                                     <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
-                                    list 7
+                                    <span>7. 레벨별 영어</span>
+
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Phần 2 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" id="content" style="height: 150px;">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" id="content" style="height: 175px;">
                         <div class="mt-2">
                             <div id="defaultContent">content</div>
                         </div>
@@ -310,12 +259,14 @@
                     </script>
 
                     <!-- Phần 3 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 150px;">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 175px;">
 
                         <div class="mt-2 ">
 
-                            <div class="border mb-2 p-2" style="height: 75px">
-                                ID
+                            <div class="border mb-2 p-2" style="height: 80px; background-color: #f5f5f5;">
+                                <span class="font-weight-bold">방문자 ID:</span>
+                                <span class="d-flex justify-content-center align-items-center font-weight-bold"> 단어 암기의 역사</span>
+
                             </div>
 
                             <div class="row">
@@ -363,6 +314,8 @@
             </div>
         </div>
 
+        <!-- Phần content -->
+
         <div class="row">
 
             <!-- Phần 1 -->
@@ -371,97 +324,97 @@
                     <ul class="list-unstyled">
 
                         <!-- Danh sách course -->
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 px-2">
                                 <span>1. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock-open"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>2. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock-open"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>3. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>4. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>5. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock-open"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>6. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>7. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>8. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>9. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>10. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>11. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>12. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>13. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>14. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>15. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
-                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center bg-white border shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                        <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>16. 게임의 이름</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
@@ -478,7 +431,6 @@
                     <iframe id="gameFrame" width="970" height="670" style="display:none;"></iframe>
                 </div>
             </div>
-
             <!-- Phần 3 -->
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 border">
 
@@ -489,7 +441,7 @@
                         <div class="row">
                             <div class="col-6 border" style="height: 520px;">
                                 <ul class="list-unstyled">
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>1. Abandon</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -497,7 +449,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>2. Student</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -505,7 +457,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>3. Apple</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -513,7 +465,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>4. Desk</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -521,7 +473,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>5. Strawberry</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -534,7 +486,7 @@
                             </div>
                             <div class="col-6 border" style="height: 520px;">
                                 <ul class="list-unstyled">
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>1. 버리다</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -542,7 +494,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>2. 학생</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -550,7 +502,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>3. 사과</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -558,7 +510,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>4. 책상</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -566,7 +518,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center bg-white rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>5. 딸기</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -585,7 +537,6 @@
             </div>
 
         </div>
-
     </div>
 
     <script>
