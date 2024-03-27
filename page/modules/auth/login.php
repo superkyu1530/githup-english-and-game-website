@@ -18,9 +18,9 @@ if (getSession('loginToken')) {
   }
 }
 
-//if(!$checkLogin){
-//  redirect('?module=user&action=userClient');
-//}
+if(!$checkLogin){
+redirect('?module=user&action=gameplaypage');
+}
 
 //quy trinh dang nhap
 if (isPost()) {
@@ -52,8 +52,8 @@ if (isPost()) {
 
           //Luu tokeLogin vao session
           setSession('loginToken', $tokenLogin);
-
-          redirect('?module=user&action=userClient');
+          setSession('id', $userId);
+          redirect('?module=user&action=gameplaypage');
         } else {
           setFlashData('msg', 'Unable to login, please try again later');
           setFlashData('msg_type', 'danger');
@@ -90,7 +90,7 @@ $msgType = getFlashData('msg_type');
   <meta name="author" content="">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-  <title>Login</title>
+  <title>로그인</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -126,20 +126,26 @@ $msgType = getFlashData('msg_type');
             <div class="bg-white" style="width: 550px; height: 450px; border-radius: 20px;">
               <div class="p-4 d-flex justify-content-center align-items-center" style="flex-direction: column;">
 
-                <h1>Welcome Back</h1>
-                <span>Fill out the information below in order to access your account</span>
-
-                <input type="text" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Email" style="width: 100%; height: 50px; border-radius: 10px;">
-                <input type="text" class="mt-3 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Password" style="width: 100%; height: 50px; border-radius: 10px;">
-                <button type="button" class="btn btn-primary mt-4 font-weight-bold" style="width: 150px; height: 50px; border-radius: 10px;">Sign In</button>
+                <h1>돌아온 것을 환영합니다</h1>
+                <span>귀하의 계정에 액세스하려면 아래 정보를 입력하세요.</span>
+                <?php 
+                    if(!empty($smg)){
+                     getSmg($smg,$smg_type);
+                                  }
+                 ?>
+                <form action="" method="post">
+                <input name="email" type="email" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="이메일" style="width: 100%; height: 50px; border-radius: 10px;">
+                <input name="password" type="password" class="mt-3 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="비밀번호" style="width: 100%; height: 50px; border-radius: 10px;">
+                <button type="submit" class="btn btn-primary mt-4 font-weight-bold" style="width: 150px; height: 50px; border-radius: 10px;">로그인</button>
+                </form>
                 <span class="mt-4">
-                  Don't have an account?
+                계정이 없나요?
                   <a href="?module=auth&action=register" class="text-decoration-none">
-                    <strong class="text-primary">Sign Up here</strong>
+                    <strong class="text-primary">여기에서 가입하세요!</strong>
                   </a>
                 </span>
-                <a href="#forget" class="text-decoration-none">
-                  <button type="button" class="btn mt-2 font-weight-bold shadow" style="width: 180px; height: 50px; border-radius: 5px;">Forget Password</button>
+                <a href="?module=auth&action=forgot" class="text-decoration-none">
+                  <button type="button" class="btn mt-2 font-weight-bold shadow" style="width: 180px; height: 50px; border-radius: 5px;">비밀번호 분실</button>
                 </a>
 
               </div>

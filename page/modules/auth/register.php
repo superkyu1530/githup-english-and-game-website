@@ -3,80 +3,27 @@ if (!defined('_CODE')) {
     die('Access denied...');
 }
 
-//kiem tra trang thai dang nhap
-$checkLogin = false;
-if (getSession('loginToken')) {
-    $tokenLogin = getSession('loginToken');
+$smg = getFlashData('smg');
+$smg_type = getFlashData('smg_type');
+$errors = getFlashData('errors');
+$old = getFlashData('old'); 
 
-    //kiem tra voi database
-    $queryToken = oneRaw("SELECT user_Id FROM tokenlogin WHERE token = '$tokenLogin' ");
+if(isPost()){
+  $filterAll = filter();
+  $activeToken = sha1(uniqid().time());
 
-    if (!empty($queryToken)) {
-        $checkLogin = true;
-    } else {
-        removeSession('loginToken');
-    }
+  $dataInsert = [
+    'fullname' => $filterAll['fullname'],
+    'email' => $filterAll['email'],
+    'phone' => $filterAll['phone'],
+    'password' => password_hash($filterAll['password'],PASSWORD_DEFAULT),
+    'activeToken' => $activeToken,
+    'create_at' => date('Y-m-d H:i:s')
+  ];
+
+  $insertStatus = insert('users',$dataInsert);
+  redirect('?module=auth&action=login');
 }
-
-//if(!$checkLogin){
-//  redirect('?module=user&action=userClient');
-//}
-
-//quy trinh dang nhap
-if (isPost()) {
-    $filterAll = filter();
-    if (!empty(trim($filterAll['email'])) && !empty(trim($filterAll['password']))) {
-        $email = $filterAll['email'];
-        $password = $filterAll['password'];
-
-        $userQuery = oneRaw("SELECT password, id FROM users WHERE email = '$email'");
-
-        if (!empty($userQuery)) {
-            $passwordHash = $userQuery['password'];
-            $userId = $userQuery['id'];
-            if (password_verify($password, $passwordHash)) {
-
-                //tao token login
-                $tokenLogin = sha1(uniqid() . time());
-
-                //Insert vao bang users.loginToken
-                $dataInsert = [
-                    'user_Id' => $userId,
-                    'token' => $tokenLogin,
-                    'create_at' => date('Y-m-d H:i:s')
-                ];
-
-                $insertStatus = insert('tokenlogin', $dataInsert);
-                if ($insertStatus) {
-                    //Insert thanh cong
-
-                    //Luu tokeLogin vao session
-                    setSession('loginToken', $tokenLogin);
-
-                    redirect('?module=user&action=userClient');
-                } else {
-                    setFlashData('msg', 'Unable to login, please try again later');
-                    setFlashData('msg_type', 'danger');
-                }
-            } else {
-                setFlashData('msg', 'Incorrect password');
-                setFlashData('msg_type', 'danger');
-                redirect('?module=auth&action=login');
-            }
-        } else {
-            setFlashData('msg', 'Email does not exist');
-            setFlashData('msg_type', 'danger');
-            redirect('?module=auth&action=login');
-        }
-    } else {
-        setFlashData('msg', 'Please enter your email and password!');
-        setFlashData('msg_type', 'danger');
-        redirect('?module=auth&action=login');
-    }
-}
-
-$msg = getFlashData('msg');
-$msgType = getFlashData('msg_type');
 
 ?>
 <!DOCTYPE html>
@@ -90,7 +37,7 @@ $msgType = getFlashData('msg_type');
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Register</title>
+    <title>등록 페이지</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -125,21 +72,26 @@ $msgType = getFlashData('msg_type');
                         <div class="bg-white" style="width: 550px; height: 600px; border-radius: 20px;">
                             <div class="p-4 d-flex justify-content-center align-items-center" style="flex-direction: column;">
                             <form action="" method="post">
-                                <h1>Welcome</h1>
-                                <span>Fill in the information below to register your account</span>
-                             
-                                <input name="name" type="name" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Full name" style="width: 100%; height: 50px; border-radius: 10px;">
-                                <input name="phone" type="number" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Phone Number" style="width: 100%; height: 50px; border-radius: 10px;">
+                                <h1>환영</h1>
+                                <span>계정을 등록하려면 아래 정보를 입력하세요.</span>
+                                <?php 
+                                 if(!empty($smg)){
+                                    getSmg($smg,$smg_type);
+                                                 }
+
+                                ?>
+                                <input name="name" type="name" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="성명" style="width: 100%; height: 50px; border-radius: 10px;">
+                                <input name="phone" type="number" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="전화 번호" style="width: 100%; height: 50px; border-radius: 10px;">
                                 <input name="email" type="email" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Email" style="width: 100%; height: 50px; border-radius: 10px;">
-                                <input name="password" type="password" class="mt-3 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Password" style="width: 100%; height: 50px; border-radius: 10px;">
-                                <input name="confirmPassword" type="password" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Confrim Password" style="width: 100%; height: 50px; border-radius: 10px;">
+                                <input name="password" type="password" class="mt-3 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="비밀번호" style="width: 100%; height: 50px; border-radius: 10px;">
+                                <input name="confirmPassword" type="password" class="mt-4 p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="비밀번호 확인" style="width: 100%; height: 50px; border-radius: 10px;">
 
                                 
-                                <button type="submit" class="btn btn-primary mt-4 font-weight-bold" style="width: 150px; height: 50px; border-radius: 10px;">Sign Up</button>
+                                <button type="submit" class="btn btn-primary mt-4 font-weight-bold" style="width: 150px; height: 50px; border-radius: 10px;">가입하기</button>
                                 <span class="mt-4">
-                                    Do you already have an account?
+                                이미 계정이 있나요?
                                     <a href="?module=auth&action=login" class="text-decoration-none">
-                                        <strong class="text-primary">Sign In here</strong>
+                                        <strong class="text-primary">여기에서 로그인하세요!</strong>
                                     </a>
                                 </span>
                                 <!-- <a href="?module=auth&action=login" class="text-decoration-none">

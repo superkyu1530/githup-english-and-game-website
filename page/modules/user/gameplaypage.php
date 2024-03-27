@@ -1,3 +1,20 @@
+<?php
+if (!defined('_CODE')) {
+  die('Access denied...');
+}
+
+$id = getSession('id');
+
+$userQuery = oneRaw("SELECT *FROM users WHERE id = '$id'");
+
+if (!empty($userQuery)) {
+    $name = $userQuery['fullname'];
+}
+
+$vocaQuery = getRaw("SELECT *FROM voca_lever_1_1500_mp3 LIMIT 20");
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -176,7 +193,7 @@
 
         <!-- Tên trang -->
         <div class="d-flex align-items-center border" style="width: 100%; height: 50px">
-            <span class="ml-5 font-weight-bold">LOGO</span>
+            <span class="ml-5 font-weight-bold">English And Game</span>
         </div>
 
         <!-- Phần trên -->
@@ -242,7 +259,9 @@
                     <!-- Phần 2 -->
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" id="content" style="height: 175px;">
                         <div class="mt-2">
-                            <div id="defaultContent">content</div>
+                        <ul class="list-unstyled custom-scrollbar" id="listItems">
+                            <li></li>
+                        </ul>
                         </div>
 
                     </div>
@@ -264,8 +283,9 @@
                         <div class="mt-2 ">
 
                             <div class="border mb-2 p-2" style="height: 80px; background-color: #f5f5f5;">
-                                <span class="font-weight-bold">방문자 ID:</span>
-                                <span class="d-flex justify-content-center align-items-center font-weight-bold"> 단어 암기의 역사</span>
+                                <span class="font-weight-bold">방문자 ID: <?php echo $id ?></span>
+                                <span class="d-flex justify-content font-weight-bold">이름: <?php echo $name ?></span>
+                              <!--  <span class="d-flex justify-content-center align-items-center font-weight-bold"> 단어 암기의 역사</span> -->
 
                             </div>
 
@@ -326,14 +346,14 @@
                         <!-- Danh sách course -->
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 px-2">
-                                <span>1. 게임의 이름</span>
-                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock-open"></i></button>
+                                <span>1. Bricks Breaker</span>
+                                <button class="btn btn-sm ml-auto game-button" data-game-url="..\Web Test Game\Block Puzzle\Block Puzzle.html"><i class="fas fa-lock-open"></i></button>
                             </div>
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
-                                <span>2. 게임의 이름</span>
-                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock-open"></i></button>
+                                <span>2. Line Coler</span>
+                                <button class="btn btn-sm ml-auto game-button" data-game-url="..\Web Test Game\Line Coler\Line Coler.html"><i class="fas fa-lock-open"></i></button>
                             </div>
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
@@ -350,14 +370,14 @@
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
-                                <span>5. 게임의 이름</span>
-                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock-open"></i></button>
+                                <span>5. Fill The Cups</span>
+                                <button class="btn btn-sm ml-auto game-button" data-game-url="..\Web Test Game\Fill The Cups\fillthecups.html"><i class="fas fa-lock-open"></i></button>
                             </div>
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
-                                <span>6. 게임의 이름</span>
-                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
+                                <span>6. Word Blocks</span>
+                                <button class="btn btn-sm ml-auto game-button" data-game-url="..\Web Test Game\Word Blocks\Word Blocks.html"><i class="fas fa-lock-open"></i></button>
                             </div>
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
@@ -426,9 +446,9 @@
             </div>
 
             <!-- Phần 2 -->
-            <div class="col-7 col-sm-7 col-md-7 col-lg-7 border">
-                <div class="mt-4" id="gameContainer">
-                    <iframe id="gameFrame" width="970" height="670" style="display:none;"></iframe>
+            <div class="col-7 col-sm-7 col-md-7 col-lg-7">
+                <div class="mt-1" id="gameContainer">
+                    <iframe id="gameFrame" width="880" height="680" style="display:none;"></iframe>
                 </div>
             </div>
             <!-- Phần 3 -->
@@ -540,13 +560,20 @@
     </div>
 
     <script>
-        $(document).ready(function() {
-            $(".game-button").click(function() {
-                var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
-                $("#gameFrame").attr("src", gameUrl); // Cập nhật src của iframe
-                $("#gameFrame").show(); // Hiển thị iframe nếu nó đang ẩn
-            });
-        });
+$(document).ready(function() {
+    $(".game-button").click(function() {
+        // Kiểm tra xem gameFrame có đang hiển thị không
+        if ($("#gameFrame").is(":visible")) {
+            // Nếu đang hiển thị, ẩn nó đi và xóa thuộc tính src để dừng game
+            $("#gameFrame").hide().removeAttr("src");
+        } else {
+            // Nếu không hiển thị, hiển thị gameFrame và thiết lập src từ data-game-url
+            var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
+            $("#gameFrame").attr("src", gameUrl).show(); // Cập nhật src và hiển thị iframe
+        }
+    });
+});
+
     </script>
 
 </body>
