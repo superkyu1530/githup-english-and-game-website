@@ -96,7 +96,7 @@
                   <div class="d-flex justify-content-center align-items-center" style="height: 100%; flex-direction: column;">
                     <span class="font-weight-bold" style="font-size: 25px; color: yellow;">로그인</span>
                     <a href="?module=auth&action=login"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">Admin</span></a>
-                    <a href="?module=user&action=gameplaypage"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">User</span></a>
+                    <a href="?module=user&action=login"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">User</span></a>
                   </div>
                 </div>
 
