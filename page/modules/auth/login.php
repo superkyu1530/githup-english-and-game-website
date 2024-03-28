@@ -4,7 +4,7 @@ if (!defined('_CODE')) {
 }
 
 //kiem tra trang thai dang nhap
-$checkLogin = false;
+/* $checkLogin = false;
 if (getSession('loginToken')) {
   $tokenLogin = getSession('loginToken');
 
@@ -20,7 +20,7 @@ if (getSession('loginToken')) {
 
 if(!$checkLogin){
 redirect('?module=user&action=gameplaypage');
-}
+} */
 
 //quy trinh dang nhap
 if (isPost()) {

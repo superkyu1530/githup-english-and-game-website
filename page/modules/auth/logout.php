@@ -4,9 +4,9 @@ if(!defined('_CODE')){
 }
 
 //if(isLogin()){
-  //  $token = getSession('loginToken');
-  //  delete('tokenlogin',"token='$token'");
+    //$token = getSession('loginToken');
+   //delete('tokenlogin',"token='$token'");
     //removeSession('loginToken');
-    redirect('?module=auth&action=login');
+    redirect('?module=home&action=homepage');
 //}
 ?>

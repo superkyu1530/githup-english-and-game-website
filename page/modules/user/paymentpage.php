@@ -2,75 +2,36 @@
 <html>
 
 <head>
-    <title>User Client Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
+    <style>
+        .custom-modal-container {
+            max-width: 800px; /* Điều chỉnh kích thước container cho phù hợp với iframe */
+            margin: auto; /* Căn giữa container trong iframe */
+        }
+
+        /* Điều chỉnh lại kích thước và khoảng cách cho các phần tử để phù hợp */
+        .payment-info, .account-info {
+            max-width: 380px; /* Điều chỉnh lại kích thước cho phù hợp */
+            margin-right: 10px; /* Điều chỉnh khoảng cách */
+        }
+
+        /* Điều chỉnh lại kích thước modal cho phù hợp */
+        #successModal .modal-dialog {
+            margin: 150px auto; /* Căn giữa modal và điều chỉnh margin */
+        }
+    </style>
 </head>
 
 <body>
-
-    <div class="container-fluid">
-
-        <div class="d-flex align-items-center">
-            <h1 class="mt-4 mb-4">
-                <a href="?module=user&action=userClient">HOME</a>
-            </h1>
-            <div class="ml-auto button-container">
-                <button class=" mt-4 mr-4 rounded-circle overflow-hidden" style="width: 50px; height: 50px; padding: 0;" onclick="toggleInfoPanel()">
-                    <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border-radius: 50%; overflow: hidden;">
-                        <img src="../page/assets/images/courses-02.jpg" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </button>
-
-                <!-- Bảng menu -->
-                <div id="infoPanel" class="info-panel mr-5 shadow" style="display: none; width: 350px; height: 550px; border-radius: 10px; background-color: #f1f4f9;">
-                    <!-- Your information panel content goes here -->
-
-                    <div>
-                        <span>Account</span>
-
-                        <ul class="list-unstyled d-flex flex-column ">
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-dollar-sign ml-2 mr-4"></i> Payment Options</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-globe ml-2 mr-4"></i> Country</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-bell ml-2 mr-4"></i> Notification Settings</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center" style="width: 100%; height: 50px; border-radius: 10px;"> <i class="fa fa-edit ml-2 mr-4"></i> Edit Profile</li>
-
-                        </ul>
-                    </div>
-
-                    <div>
-                        <span>General</span>
-
-                        <ul class=" list-unstyled d-flex flex-column ">
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-question ml-2 mr-4"></i> Support</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-file ml-2 mr-4"></i> Terms of Service</li>
-
-                            <li class="mt-2 p-2 bg-white shadow-sm border d-flex align-items-center " style="width: 100%; height: 50px; border-radius: 10px"> <i class="fa fa-user-plus ml-2 mr-4"></i> Invite Friends</li>
-
-                        </ul>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <button class="btn btn-danger"> <i class="fa fa-sign-out-alt"></i> Logout</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+<div class="custom-modal-container">
         <div class="row mt-2">
-
             <!-- Phần 1 -->
-            <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="col-5 col-sm-5 col-md-5 col-lg-5">
                 <div class="mt-2">
                     <h3>Awaiting payment</h3>
 
@@ -133,7 +94,7 @@
             </div>
 
             <!-- Phần 2 -->
-            <div class="col-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-7 col-sm-7 col-md-7 col-lg-7">
                 <div class="mt-2 ml-2">
                     <h3> Payment by card</h3>
                 </div>
@@ -219,17 +180,13 @@
                                         <i class="fa fa-check"></i> Submitted successfully!
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="navigateToUserClient()">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closePage()">Close</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <script>
-                            function navigateToUserClient() {
-                                window.location.href = "?module=user&action=userClient";
-                            }
-                        </script>
+
 
                     </div>
                 </div>
@@ -239,11 +196,18 @@
         </div>
 
     </div>
-
-    <div id="tab-panel-5" class="tab-pane fade show active">
-                <?php include 'userClient.php'; ?>
-            </div>
-
+    </div>
 </body>
+<script>
+function closePage() {
+    try {
+        window.close();
+    } catch (e) {
+        console.log(e);
+    }
+    
+    // Nếu window.close() không hoạt động, bạn có thể thêm một thông báo hoặc hướng dẫn người dùng đóng trang bằng tay
+}
+</script>
 
 </html>

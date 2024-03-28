@@ -11,7 +11,28 @@ if (!empty($userQuery)) {
     $name = $userQuery['fullname'];
 }
 
-$vocaQuery = getRaw("SELECT *FROM voca_lever_1_1500_mp3 LIMIT 20");
+
+if(isPost()){
+        $buttonValue = $_POST['submitBtn'];
+        if (!empty($buttonValue)) {
+            
+            switch ($buttonValue) {
+                case 'voca_lever_1_1500_elimentary':
+                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_1_1500_elimentary LIMIT 20 ");
+                    break;
+                case 'voca_lever_2_1200_middle':
+                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_2_1200_middle LIMIT 20 ");
+                    break;
+                case 'voca_lever_3_2850_high':
+                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_3_2850_high LIMIT 20 ");
+                    break;
+            }
+
+        }
+    }
+    
+
+
 
 ?>
 
@@ -112,6 +133,27 @@ $vocaQuery = getRaw("SELECT *FROM voca_lever_1_1500_mp3 LIMIT 20");
             /* Màu của thanh cuộn khi di chuột qua */
         }
     </style>
+        <style>
+        .table-container {
+            width: 100%; /* Hoặc một chiều rộng cố định */
+            height: 175px; /* Chiều cao cố định cho container */
+            overflow-y: auto; /* Cho phép cuộn dọc */
+            border: 1px solid #ccc; /* Thêm viền cho container */
+            margin-top: 20px;
+        }
+        table {
+            width: 100%; /* Đảm bảo bảng mở rộng đầy đủ chiều rộng của container */
+            border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
+        }
+        th, td {
+            text-align: left; /* Căn chỉnh văn bản */
+            padding: 8px; /* Thêm đệm */
+            border: 1px solid #ddd; /* Thêm viền cho các ô */
+        }
+        thead tr {
+            background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+        }
+    </style>
 
     <script>
         $(document).ready(function() {
@@ -183,6 +225,9 @@ $vocaQuery = getRaw("SELECT *FROM voca_lever_1_1500_mp3 LIMIT 20");
             // Bắt đầu đếm ngược từ đầu
             startCountdown();
         }
+
+        //table
+        
     </script>
 
 </head>
@@ -206,63 +251,89 @@ $vocaQuery = getRaw("SELECT *FROM voca_lever_1_1500_mp3 LIMIT 20");
                     <!-- Phần 1 -->
                     <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 175px; overflow-y: auto;">
                         <div class="">
+                            <form action="" method="post">
                             <ul class="list-unstyled custom-scrollbar" id="listItems">
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 1">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_1_1500_elimentary">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>1. 초등학교 영어</span>
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 2">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_2_1200_middle">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>2. 중학교 영어</span>
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 3">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_3_2850_high">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>3. 고등학교 영어</span>
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 4">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>4. 레벨별 영어</span>
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 5">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>5. 레벨별 영어</span>
 
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 6">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" >
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>6. 레벨별 영어</span>
 
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 7">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>7. 레벨별 영어</span>
 
                                 </li>
                             </ul>
+                            </form>
                         </div>
                     </div>
 
                     <!-- Phần 2 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" id="content" style="height: 175px;">
-                        <div class="mt-2">
-                        <ul class="list-unstyled custom-scrollbar" id="listItems">
-                            <li></li>
-                        </ul>
-                        </div>
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 table-container" id="content" style="height: 175px;">
+    <table>
+        <thead>
+            <tr>
+                <th>숫자 순서</th>
+                <th>English</th>
+                <th>한국</th>            
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if(!empty($vocaQuery)):
+                $count = 0;
+                foreach($vocaQuery as $item):
+                    $count++; 
+            ?>
+            <tr>
+                <td><?php echo $count; ?></td>
+                <td><?php echo $item['english'] ?></td>
+                <td><?php echo $item['한국'] ?></td>
+            </tr>
+            <?php
+                endforeach;
+            endif;
+            ?>
+        </tbody> 
+    </table>
+
+
+                        
 
                     </div>
 
@@ -275,6 +346,7 @@ $vocaQuery = getRaw("SELECT *FROM voca_lever_1_1500_mp3 LIMIT 20");
                                 $("#content").append("<div>" + selectedItem + "</div>"); // Thêm nội dung liên quan vào phần 2
                             });
                         });
+
                     </script>
 
                     <!-- Phần 3 -->
@@ -285,8 +357,8 @@ $vocaQuery = getRaw("SELECT *FROM voca_lever_1_1500_mp3 LIMIT 20");
                             <div class="border mb-2 p-2" style="height: 80px; background-color: #f5f5f5;">
                                 <span class="font-weight-bold">방문자 ID: <?php echo $id ?></span>
                                 <span class="d-flex justify-content font-weight-bold">이름: <?php echo $name ?></span>
+                               <a href="?module=auth&action=logout"><span class="d-flex justify-content font-weight-bold">Logout</span></a> 
                               <!--  <span class="d-flex justify-content-center align-items-center font-weight-bold"> 단어 암기의 역사</span> -->
-
                             </div>
 
                             <div class="row">
@@ -358,13 +430,13 @@ $vocaQuery = getRaw("SELECT *FROM voca_lever_1_1500_mp3 LIMIT 20");
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
-                                <span>3. 게임의 이름</span>
-                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
+                                <span>3. Mathching Gmae</span>
+                                <button class="btn btn-sm ml-auto game-button" data-game-url="?module=user&action=paymentpage"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
-                                <span>4. 게임의 이름</span>
+                                <span>4. Smashy Draw</span>
                                 <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
