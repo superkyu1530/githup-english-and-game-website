@@ -132,48 +132,27 @@ if(isPost()){
 
         /* Tùy chỉnh thanh cuộn */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 10px;
             /* Chiều rộng của thanh cuộn */
             height: 6px;
             /* Chiều cao của thanh cuộn */
         }
 
         ::-webkit-scrollbar-track {
-            background-color: #f1f1f1;
+            background-color: white;
             /* Màu nền của thanh cuộn */
         }
 
         ::-webkit-scrollbar-thumb {
-            background-color: #888;
+            background-color: #f5f5f5;
             /* Màu của thanh cuộn */
             border-radius: 4px;
             /* Độ cong viền của thanh cuộn */
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background-color: #555;
+            background-color: #888;
             /* Màu của thanh cuộn khi di chuột qua */
-        }
-    </style>
-        <style>
-        .table-container {
-            width: 100%; /* Hoặc một chiều rộng cố định */
-            height: 175px; /* Chiều cao cố định cho container */
-            overflow-y: auto; /* Cho phép cuộn dọc */
-            border: 1px solid #ccc; /* Thêm viền cho container */
-            margin-top: 20px;
-        }
-        table {
-            width: 100%; /* Đảm bảo bảng mở rộng đầy đủ chiều rộng của container */
-            border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
-        }
-        th, td {
-            text-align: left; /* Căn chỉnh văn bản */
-            padding: 8px; /* Thêm đệm */
-            border: 1px solid #ddd; /* Thêm viền cho các ô */
-        }
-        thead tr {
-            background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
         }
     </style>
 
@@ -247,9 +226,6 @@ if(isPost()){
             // Bắt đầu đếm ngược từ đầu
             startCountdown();
         }
-
-        //table
-        
     </script>
 
 </head>
@@ -259,9 +235,9 @@ if(isPost()){
     <div class="container-fluid">
 
         <!-- Tên trang -->
-        <div class="d-flex align-items-center border" style="width: 100%; height: 50px">
-            <span class="ml-5 font-weight-bold">English And Game</span>
-        </div>
+        <!-- <div class="d-flex align-items-center border" style="width: 100%; height: 50px">
+            <span class="ml-5 font-weight-bold">LOGO</span>
+        </div> -->
 
         <!-- Phần trên -->
         <div class="d-flex align-items-center" style="width: 100%; height: 175px;">
@@ -271,91 +247,63 @@ if(isPost()){
                 <div class="row">
 
                     <!-- Phần 1 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 border" style="height: 175px; overflow-y: auto;">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 border" style="height: 175px; overflow-y: auto;">
                         <div class="">
-                            <form action="" method="post">
                             <ul class="list-unstyled custom-scrollbar" id="listItems">
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_1_1500_elimentary">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 1">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>1. 초등학교 영어</span>
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_2_1200_middle">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 2">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>2. 중학교 영어</span>
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_3_2850_high">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 3">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>3. 고등학교 영어</span>
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 4">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>4. 레벨별 영어</span>
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 5">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>5. 레벨별 영어</span>
 
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" >
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 6">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>6. 레벨별 영어</span>
 
                                 </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
+                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" data-content="Nội dung 7">
+                                    <button class="btn btn-outline-secondary btn-sm" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
                                     <span>7. 레벨별 영어</span>
 
                                 </li>
                             </ul>
-                            </form>
                         </div>
                     </div>
 
                     <!-- Phần 2 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 table-container" id="content" style="height: 175px;">
-    <table>
-        <thead>
-            <tr>
-                <th>숫자 순서</th>
-                <th>English</th>
-                <th>한국</th>            
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if(!empty($vocaQuery)):
-                $count = 0;
-                foreach($vocaQuery as $item):
-                    $count++; 
-            ?>
-            <tr>
-                <td><?php echo $count; ?></td>
-                <td><?php echo $item['english'] ?></td>
-                <td><?php echo $item['한국'] ?></td>
-            </tr>
-            <?php
-                endforeach;
-            endif;
-            ?>
-        </tbody> 
-    </table>
-
-
-                        
+                    <div class="col-5 col-sm-5 col-md-5 col-lg-5 border" id="content" style="height: 175px;">
+                        <div class="mt-2">
+                            <div id="defaultContent">content</div>
+                        </div>
 
                     </div>
 
@@ -368,7 +316,6 @@ if(isPost()){
                                 $("#content").append("<div>" + selectedItem + "</div>"); // Thêm nội dung liên quan vào phần 2
                             });
                         });
-
                     </script>
 
                     <!-- Phần 3 -->
@@ -376,11 +323,10 @@ if(isPost()){
 
                         <div class="mt-2 ">
 
-                            <div class="border mb-2 p-2" style="height: 80px; background-color: #f5f5f5;">
-                                <span class="font-weight-bold">방문자 ID: <?php echo $id ?></span>
-                                <span class="d-flex justify-content font-weight-bold">이름: <?php echo $name ?></span>
-                               <a href="?module=auth&action=logout"><span class="d-flex justify-content font-weight-bold">Logout</span></a> 
-                              <!--  <span class="d-flex justify-content-center align-items-center font-weight-bold"> 단어 암기의 역사</span> -->
+                            <div class="border mb-2 p-2 rounded-lg" style="height: 80px; background-color: #f5f5f5;">
+                                <span class="font-weight-bold">방문자 ID:</span>
+                                <span class="d-flex justify-content-center align-items-center font-weight-bold"> 단어 암기의 역사</span>
+
                             </div>
 
                             <div class="row">
@@ -432,9 +378,9 @@ if(isPost()){
 
         <div class="row">
 
-            <!-- Phần 1 -->
+            <!-- Phần 1 - Cột 1 -->
             <div class="col-2 col-sm-2 col-md-2 col-lg-2 border p-2">
-                <div class="custom-scrollbar p-2" style="width: 100%; height: 500px; overflow-y: scroll;">
+                <div class="custom-scrollbar p-2" style="width: 100%; height: 510px; overflow-y: scroll;">
                     <ul class="list-unstyled">
 
                         <!-- Danh sách course -->
@@ -459,7 +405,7 @@ if(isPost()){
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>4. Smashy Draw</span>
-                                <button class="btn btn-sm ml-auto game-button" data-game-url="?module=user&action=paymentpage"><i class="fas fa-lock"></i></button>
+                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
@@ -539,13 +485,14 @@ if(isPost()){
                 </div>
             </div>
 
-            <!-- Phần 2 -->
-            <div class="col-7 col-sm-7 col-md-7 col-lg-7">
-                <div class="mt-1" id="gameContainer">
-                    <iframe id="gameFrame" width="880" height="680" style="display:none;"></iframe>
+            <!-- Phần 2 - Cột 2 -->
+            <div class="col-7 col-sm-7 col-md-7 col-lg-7 border">
+                <div class="mt-4" id="gameContainer">
+                    <iframe id="gameFrame" width="970" height="670" style="display:none;"></iframe>
                 </div>
             </div>
-            <!-- Phần 3 -->
+
+            <!-- Phần 3 - Cột 3 -->
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 border">
 
                 <div>
@@ -553,9 +500,9 @@ if(isPost()){
                     <!-- <div id="tableDiv" class="d-none"> -->
                     <div>
                         <div class="row">
-                            <div class="col-6 border" style="height: 520px;">
+                            <div class="col-6 border" style="height: 530px;">
                                 <ul class="list-unstyled">
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>1. Abandon</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -563,7 +510,7 @@ if(isPost()){
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>2. Student</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -571,7 +518,7 @@ if(isPost()){
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>3. Apple</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -579,7 +526,7 @@ if(isPost()){
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>4. Desk</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -587,7 +534,7 @@ if(isPost()){
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>5. Strawberry</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -598,9 +545,9 @@ if(isPost()){
 
                                 </ul>
                             </div>
-                            <div class="col-6 border" style="height: 520px;">
+                            <div class="col-6 border" style="height: 530px;">
                                 <ul class="list-unstyled">
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>1. 버리다</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -608,7 +555,7 @@ if(isPost()){
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>2. 학생</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -616,7 +563,7 @@ if(isPost()){
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>3. 사과</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -624,7 +571,7 @@ if(isPost()){
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>4. 책상</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -632,7 +579,7 @@ if(isPost()){
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 50px; background-color: #f1f4f9;">
+                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>5. 딸기</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
@@ -654,20 +601,13 @@ if(isPost()){
     </div>
 
     <script>
-$(document).ready(function() {
-    $(".game-button").click(function() {
-        // Kiểm tra xem gameFrame có đang hiển thị không
-        if ($("#gameFrame").is(":visible")) {
-            // Nếu đang hiển thị, ẩn nó đi và xóa thuộc tính src để dừng game
-            $("#gameFrame").hide().removeAttr("src");
-        } else {
-            // Nếu không hiển thị, hiển thị gameFrame và thiết lập src từ data-game-url
-            var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
-            $("#gameFrame").attr("src", gameUrl).show(); // Cập nhật src và hiển thị iframe
-        }
-    });
-});
-
+        $(document).ready(function() {
+            $(".game-button").click(function() {
+                var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
+                $("#gameFrame").attr("src", gameUrl); // Cập nhật src của iframe
+                $("#gameFrame").show(); // Hiển thị iframe nếu nó đang ẩn
+            });
+        });
     </script>
 
 </body>
