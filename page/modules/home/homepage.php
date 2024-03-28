@@ -1,3 +1,10 @@
+<?php
+if (!defined('_CODE')) {
+  die('Access denied...');
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -97,7 +104,6 @@
                     <span class="font-weight-bold" style="font-size: 25px; color: yellow;">로그인</span>
                     <a href="?module=auth&action=login"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">Admin</span></a>
                     <a href="?module=auth&action=login"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">User</span></a>
-                    <!-- <a href="?module=user&action=gameplaypage"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">User</span></a> -->
                   </div>
                 </div>
 

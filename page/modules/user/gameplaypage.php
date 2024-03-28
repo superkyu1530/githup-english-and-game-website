@@ -530,38 +530,6 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>6. Strawberry</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>7. Strawberry</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>8. Strawberry</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>9. Strawberry</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
 
                                 </ul>
                             </div>
@@ -602,62 +570,6 @@
                                     <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>5. 딸기</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>6. 딸기</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>7. 딸기</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>8. 딸기</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>9. 딸기</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>10. 딸기</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>11. 딸기</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>12. 딸기</span>
                                             <div class="form-check d-flex align-items-center ml-auto">
                                                 <input class="form-check-input" type="checkbox" id="myCheckbox">
                                             </div>
