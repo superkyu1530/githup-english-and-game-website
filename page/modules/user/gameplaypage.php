@@ -146,7 +146,7 @@ if (isPost()) {
             /* Cho phép cuộn dọc */
             border: 1px solid #ccc;
             /* Thêm viền cho container */
-            margin-top: 20px;
+            /* margin-top: 20px; */
         }
 
         table {
@@ -318,7 +318,7 @@ if (isPost()) {
                     </div>
 
                     <!-- Phần 2 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 table-container" id="content" style="height: 175px;">
+                    <div class="col-5 col-sm-5 col-md-5 col-lg-5 table-container" id="content" style="height: 175px;">
                         <table>
                             <thead>
                                 <tr>
