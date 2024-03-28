@@ -34,6 +34,28 @@ if(isPost()){
 
 
 
+if(isPost()){
+        $buttonValue = $_POST['submitBtn'];
+        if (!empty($buttonValue)) {
+            
+            switch ($buttonValue) {
+                case 'voca_lever_1_1500_elimentary':
+                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_1_1500_elimentary LIMIT 20 ");
+                    break;
+                case 'voca_lever_2_1200_middle':
+                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_2_1200_middle LIMIT 20 ");
+                    break;
+                case 'voca_lever_3_2850_high':
+                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_3_2850_high LIMIT 20 ");
+                    break;
+            }
+
+        }
+    }
+    
+
+
+
 ?>
 
 <!DOCTYPE html>
