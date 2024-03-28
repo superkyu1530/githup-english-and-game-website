@@ -19,19 +19,19 @@ if (isPost()) {
         switch ($buttonValue) {
             case 'voca_lever_1_1500_elimentary':
                 $vocaQuery = getRaw(" SELECT * FROM voca_lever_1_1500_elimentary LIMIT 20 ");
+
                 break;
             case 'voca_lever_2_1200_middle':
                 $vocaQuery = getRaw(" SELECT * FROM voca_lever_2_1200_middle LIMIT 20 ");
+
                 break;
             case 'voca_lever_3_2850_high':
                 $vocaQuery = getRaw(" SELECT * FROM voca_lever_3_2850_high LIMIT 20 ");
+
                 break;
         }
     }
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -329,6 +329,8 @@ if (isPost()) {
                             </thead>
                             <tbody>
                                 <?php
+                                // if (isset($_POST['submitBtnVoca']) && ($_POST['submitBtnVoca']== true)):
+                                // if($_POST['submitBtnVoca']== true):
                                 if (!empty($vocaQuery)) :
                                     $count = 0;
                                     foreach ($vocaQuery as $item) :
@@ -342,8 +344,18 @@ if (isPost()) {
                                 <?php
                                     endforeach;
                                 endif;
+                                //  endif;
+                                // endif;
                                 ?>
+                                <form action="" method="post">
+                                    <tr><button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtnVoca" value="true">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <span>도전</span>
+                                    </tr>
+                                </form>
                             </tbody>
+
                         </table>
 
                     </div>
@@ -421,8 +433,8 @@ if (isPost()) {
         <div class="row">
 
             <!-- Phần 1 - Cột 1 -->
-            <div class="col-2 col-sm-2 col-md-2 col-lg-2 border pt-2">
-                <div class="custom-scrollbar p-2" style="width: 100%; height: 680px; overflow-y: scroll;">
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 border p-2">
+                <div class="custom-scrollbar p-2" style="width: 100%; height: 510px; overflow-y: scroll;">
                     <ul class="list-unstyled">
 
                         <!-- Danh sách course -->
@@ -528,7 +540,7 @@ if (isPost()) {
             </div>
 
             <!-- Phần 2 - Cột 2 -->
-            <div class="col-7 col-sm-7 col-md-7 col-lg-7 border d-flex align-items-center">
+            <div class="col-7 col-sm-7 col-md-7 col-lg-7 border">
                 <div class="mt-4" id="gameContainer">
                     <iframe id="gameFrame" width="880" height="670" style="display:none;"></iframe>
                 </div>
@@ -537,120 +549,52 @@ if (isPost()) {
             <!-- Phần 3 - Cột 3 -->
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 border">
 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>숫자 순서</th>
+                            <th>English</th>
+                            <th>한국</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        if (!empty($renderQuery)) :
+                            $count = 0;
+                            foreach ($renderQuery as $item) :
+                                $count++;
+                        ?>
+                                <tr>
+                                    <td><?php echo $count; ?></td>
+                                    <td><?php echo $item['english'] ?> <div class="form-check d-flex align-items-center ml-auto">
+                                            <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                        </div>
+                                    </td>
+                                    <td><?php echo $item['한국'] ?> <div class="form-check d-flex align-items-center ml-auto">
+                                            <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                        </div>
+                                    </td>
+                                </tr>
+                        <?php
+                            endforeach;
+                        endif;
+                        ?>
+                    </tbody>
+                </table>
                 <div>
-
-                    <!-- <div id="tableDiv" class="d-none"> -->
-                    <div>
-                        <div class="row">
-                            <div class="col-6 border " style="height: 700px;">
-                                <ul class="list-unstyled mt-4">
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>1. Abandon</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>2. Student</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>3. Apple</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>4. Desk</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>5. Strawberry</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="col-6 border" style="height: 700px;">
-                                <ul class="list-unstyled mt-4">
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>1. 버리다</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>2. 학생</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>3. 사과</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>4. 책상</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
-                                        <div class="d-flex align-items-center flex-grow-1 p-2">
-                                            <span>5. 딸기</span>
-                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
+                    <button class="btn btn-primary mr-2" style="display: block;">제출하다</button>
                 </div>
-
             </div>
 
-        </div>
-    </div>
-
-    <script>
-        $(document).ready(function() {
-            $(".game-button").click(function() {
-                var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
-                $("#gameFrame").attr("src", gameUrl); // Cập nhật src của iframe
-                $("#gameFrame").show(); // Hiển thị iframe nếu nó đang ẩn
-            });
-        });
-    </script>
+            <script>
+                $(document).ready(function() {
+                    $(".game-button").click(function() {
+                        var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
+                        $("#gameFrame").attr("src", gameUrl); // Cập nhật src của iframe
+                        $("#gameFrame").show(); // Hiển thị iframe nếu nó đang ẩn
+                    });
+                });
+            </script>
 
 </body>
 
