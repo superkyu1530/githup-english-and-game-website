@@ -1,6 +1,6 @@
 <?php
 if (!defined('_CODE')) {
-  die('Access denied...');
+    die('Access denied...');
 }
 
 $id = getSession('id');
@@ -12,47 +12,45 @@ if (!empty($userQuery)) {
 }
 
 
-if(isPost()){
-        $buttonValue = $_POST['submitBtn'];
-        if (!empty($buttonValue)) {
-            
-            switch ($buttonValue) {
-                case 'voca_lever_1_1500_elimentary':
-                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_1_1500_elimentary LIMIT 20 ");
-                    break;
-                case 'voca_lever_2_1200_middle':
-                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_2_1200_middle LIMIT 20 ");
-                    break;
-                case 'voca_lever_3_2850_high':
-                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_3_2850_high LIMIT 20 ");
-                    break;
-            }
+if (isPost()) {
+    $buttonValue = $_POST['submitBtn'];
+    if (!empty($buttonValue)) {
 
+        switch ($buttonValue) {
+            case 'voca_lever_1_1500_elimentary':
+                $vocaQuery = getRaw(" SELECT * FROM voca_lever_1_1500_elimentary LIMIT 20 ");
+                break;
+            case 'voca_lever_2_1200_middle':
+                $vocaQuery = getRaw(" SELECT * FROM voca_lever_2_1200_middle LIMIT 20 ");
+                break;
+            case 'voca_lever_3_2850_high':
+                $vocaQuery = getRaw(" SELECT * FROM voca_lever_3_2850_high LIMIT 20 ");
+                break;
         }
     }
-    
+}
 
 
 
-if(isPost()){
-        $buttonValue = $_POST['submitBtn'];
-        if (!empty($buttonValue)) {
-            
-            switch ($buttonValue) {
-                case 'voca_lever_1_1500_elimentary':
-                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_1_1500_elimentary LIMIT 20 ");
-                    break;
-                case 'voca_lever_2_1200_middle':
-                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_2_1200_middle LIMIT 20 ");
-                    break;
-                case 'voca_lever_3_2850_high':
-                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_3_2850_high LIMIT 20 ");
-                    break;
-            }
 
+if (isPost()) {
+    $buttonValue = $_POST['submitBtn'];
+    if (!empty($buttonValue)) {
+
+        switch ($buttonValue) {
+            case 'voca_lever_1_1500_elimentary':
+                $vocaQuery = getRaw(" SELECT * FROM voca_lever_1_1500_elimentary LIMIT 20 ");
+                break;
+            case 'voca_lever_2_1200_middle':
+                $vocaQuery = getRaw(" SELECT * FROM voca_lever_2_1200_middle LIMIT 20 ");
+                break;
+            case 'voca_lever_3_2850_high':
+                $vocaQuery = getRaw(" SELECT * FROM voca_lever_3_2850_high LIMIT 20 ");
+                break;
         }
     }
-    
+}
+
 
 
 
@@ -379,8 +377,8 @@ if(isPost()){
         <div class="row">
 
             <!-- Phần 1 - Cột 1 -->
-            <div class="col-2 col-sm-2 col-md-2 col-lg-2 border p-2">
-                <div class="custom-scrollbar p-2" style="width: 100%; height: 510px; overflow-y: scroll;">
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 border pt-2">
+                <div class="custom-scrollbar p-2" style="width: 100%; height: 680px; overflow-y: scroll;">
                     <ul class="list-unstyled">
 
                         <!-- Danh sách course -->
@@ -486,9 +484,9 @@ if(isPost()){
             </div>
 
             <!-- Phần 2 - Cột 2 -->
-            <div class="col-7 col-sm-7 col-md-7 col-lg-7 border">
+            <div class="col-7 col-sm-7 col-md-7 col-lg-7 border d-flex align-items-center">
                 <div class="mt-4" id="gameContainer">
-                    <iframe id="gameFrame" width="970" height="670" style="display:none;"></iframe>
+                    <iframe id="gameFrame" width="880" height="680" style="display:none;"></iframe>
                 </div>
             </div>
 
@@ -500,8 +498,8 @@ if(isPost()){
                     <!-- <div id="tableDiv" class="d-none"> -->
                     <div>
                         <div class="row">
-                            <div class="col-6 border" style="height: 530px;">
-                                <ul class="list-unstyled">
+                            <div class="col-6 border " style="height: 700px;">
+                                <ul class="list-unstyled mt-4">
                                     <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>1. Abandon</span>
@@ -545,8 +543,8 @@ if(isPost()){
 
                                 </ul>
                             </div>
-                            <div class="col-6 border" style="height: 530px;">
-                                <ul class="list-unstyled">
+                            <div class="col-6 border" style="height: 700px;">
+                                <ul class="list-unstyled mt-4">
                                     <li class="mt-2 mb-2 d-flex align-items-center rounded-lg shadow-sm" style="height: 35px; background-color: #f1f4f9;">
                                         <div class="d-flex align-items-center flex-grow-1 p-2">
                                             <span>1. 버리다</span>
