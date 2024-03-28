@@ -437,7 +437,7 @@ if(isPost()){
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>4. Smashy Draw</span>
-                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
+                                <button class="btn btn-sm ml-auto game-button" data-game-url="?module=user&action=paymentpage"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
