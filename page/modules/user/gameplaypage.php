@@ -214,12 +214,12 @@ if (isPost()) {
 
         <!-- Phần trên -->
 
-        <div class="container-fluid">
+        <div class="container-fluid border">
 
             <div class="row">
 
                 <!-- Phần 1 -->
-                <div class="col-12 col-sm-3 col-md-3 col-lg-3 border" style="height: 150px; overflow-y: auto;">
+                <div class="col-12 col-sm-3 col-md-3 col-lg-3" style="height: 150px; overflow-y: auto;">
                     <div class="d-flex justify-content-center align-items-center border rounded-lg mt-2" style="width: 100%; height: 40px; background: linear-gradient(to bottom left, #fe67cb, #ff9a66);">
                         <span class="font-weight-bold text-light">English And Game</span>
                     </div>
@@ -279,7 +279,7 @@ if (isPost()) {
                 </div>
 
                 <!-- Phần 2 -->
-                <div class="col-12 col-sm-5 col-md-5 col-lg-5 table-container py-2" id="content" style="height: 150px;">
+                <div class="col-12 col-sm-5 col-md-5 col-lg-5 table-container py-2 border border-0" id="content" style="height: 150px;">
                     <table class="mt-1">
                         <thead>
                             <tr>
@@ -333,7 +333,7 @@ if (isPost()) {
                 </script>
 
                 <!-- Phần 3 -->
-                <div class="col-12 col-sm-4 col-md-4 col-lg-4 border" style="height: 150px;">
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4" style="height: 150px;">
 
                     <div class="mt-1 ">
 
@@ -366,7 +366,7 @@ if (isPost()) {
 
                             <!-- thời gian đến ngược -->
                             <div class="col-8">
-                                <div class="border p-2" style="width: 100%; height: 55px;">
+                                <div class=" p-2" style="width: 100%; height: 55px;">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <div class="container">
                                             <div class="row">
@@ -392,7 +392,7 @@ if (isPost()) {
         </div>
 
         <!-- Phần content -->
-        <div class="container-fluid">
+        <div class="container-fluid border">
             <div class="row">
 
                 <!-- Phần 1 - Cột 1 -->
