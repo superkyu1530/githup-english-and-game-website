@@ -46,7 +46,7 @@
                             <tbody>
                                 <tr style=" background-color: #f1f4f9;">
                                     <th scope="row">
-                                        Matching Game
+                                        Smashy Draw
                                     </th>
                                     <td class="text-right">
                                         $50.00
@@ -63,7 +63,7 @@
                                         <ul class="list-unstyled">
                                             <li class="mt-2 mb-2">$50.00</li>
                                             <li class="mt-2 mb-2">
-                                                AGFDRE
+                                                GHFSAA
                                             </li>
                                         </ul>
                                     </td>

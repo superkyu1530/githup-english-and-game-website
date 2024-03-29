@@ -452,14 +452,14 @@ if (isPost()) {
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
-                                <span>3. Mathching Gmae</span>
+                                <span>3. Mathching Game</span>
                                 <button class="btn btn-sm ml-auto game-button" data-game-url="?module=user&action=paymentpage"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                             <div class="d-flex align-items-center flex-grow-1 p-2">
                                 <span>4. Smashy Draw</span>
-                                <button class="btn btn-sm ml-auto"><i class="fas fa-lock"></i></button>
+                                <button class="btn btn-sm ml-auto game-button" data-game-url="?module=user&action=paymentpage1"><i class="fas fa-lock"></i></button>
                             </div>
                         </li>
                         <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
@@ -541,13 +541,13 @@ if (isPost()) {
 
             <!-- Phần 2 - Cột 2 -->
             <div class="col-7 col-sm-7 col-md-7 col-lg-7 border">
-                <div class="mt-4" id="gameContainer">
+                <div class="mt-1" id="gameContainer">
                     <iframe id="gameFrame" width="880" height="670" style="display:none;"></iframe>
                 </div>
             </div>
 
             <!-- Phần 3 - Cột 3 -->
-            <div class="col-3 col-sm-3 col-md-3 col-lg-3 border">
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 table-container" id="content" style="height: 670px;">
 
                 <table>
                     <thead>
@@ -559,18 +559,18 @@ if (isPost()) {
                     </thead>
                     <tbody>
                         <?php
-                        if (!empty($renderQuery)) :
+                        if (!empty($vocaQuery)) :
                             $count = 0;
-                            foreach ($renderQuery as $item) :
+                            foreach ($vocaQuery as $item) :
                                 $count++;
                         ?>
                                 <tr>
                                     <td><?php echo $count; ?></td>
-                                    <td><?php echo $item['english'] ?> <div class="form-check d-flex align-items-center ml-auto">
+                                    <td> <div class="form-check d-flex align-items-center ml-auto"><?php echo $item['english'] ?> 
                                             <input class="form-check-input" type="checkbox" id="myCheckbox">
                                         </div>
                                     </td>
-                                    <td><?php echo $item['한국'] ?> <div class="form-check d-flex align-items-center ml-auto">
+                                    <td><div class="form-check d-flex align-items-center ml-auto"><?php echo $item['한국'] ?> 
                                             <input class="form-check-input" type="checkbox" id="myCheckbox">
                                         </div>
                                     </td>
@@ -581,9 +581,6 @@ if (isPost()) {
                         ?>
                     </tbody>
                 </table>
-                <div>
-                    <button class="btn btn-primary mr-2" style="display: block;">제출하다</button>
-                </div>
             </div>
 
             <script>
