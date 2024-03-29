@@ -1,6 +1,6 @@
 <?php
 if (!defined('_CODE')) {
-  die('Access denied...');
+    die('Access denied...');
 }
 
 $id = getSession('id');
@@ -12,35 +12,34 @@ if (!empty($userQuery)) {
 }
 
 
-if(isPost()){
-        $buttonValue = $_POST['submitBtn'];
-        if (!empty($buttonValue)) {
-            
-            switch ($buttonValue) {
-                case 'voca_lever_1_1500_elimentary':
-                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_1_1500_elimentary LIMIT 20 ");
+if (isPost()) {
+    $buttonValue = $_POST['submitBtn'];
+    if (!empty($buttonValue)) {
 
-                    break;
-                case 'voca_lever_2_1200_middle':
-                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_2_1200_middle LIMIT 20 ");
+        switch ($buttonValue) {
+            case 'voca_lever_1_1500_elimentary':
+                $vocaQuery = getRaw(" SELECT * FROM voca_lever_1_1500_elimentary LIMIT 20 ");
 
-                    break;
-                case 'voca_lever_3_2850_high':
-                    $vocaQuery = getRaw(" SELECT * FROM voca_lever_3_2850_high LIMIT 20 ");
+                break;
+            case 'voca_lever_2_1200_middle':
+                $vocaQuery = getRaw(" SELECT * FROM voca_lever_2_1200_middle LIMIT 20 ");
 
-                    break;
-            }
+                break;
+            case 'voca_lever_3_2850_high':
+                $vocaQuery = getRaw(" SELECT * FROM voca_lever_3_2850_high LIMIT 20 ");
 
+                break;
         }
     }
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <div class="d-flex align-items-center border" style="width: 100%; height: 50px">
-<span class="ml-5 font-weight-bold">English And Game</span>
-        </div>
+    <span class="ml-5 font-weight-bold">English And Game</span>
+</div>
 
 <head>
     <title>User Client Page</title>
@@ -137,25 +136,39 @@ if(isPost()){
         }
     </style>
 
-<style>
+    <style>
         .table-container {
-            width: 100%; /* Hoặc một chiều rộng cố định */
-            height: 175px; /* Chiều cao cố định cho container */
-            overflow-y: auto; /* Cho phép cuộn dọc */
-            border: 1px solid #ccc; /* Thêm viền cho container */
-            margin-top: 20px;
+            width: 100%;
+            /* Hoặc một chiều rộng cố định */
+            height: 175px;
+            /* Chiều cao cố định cho container */
+            overflow-y: auto;
+            /* Cho phép cuộn dọc */
+            border: 1px solid #ccc;
+            /* Thêm viền cho container */
+            /* margin-top: 20px; */
         }
+
         table {
-            width: 100%; /* Đảm bảo bảng mở rộng đầy đủ chiều rộng của container */
-            border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
+            width: 100%;
+            /* Đảm bảo bảng mở rộng đầy đủ chiều rộng của container */
+            border-collapse: collapse;
+            /* Loại bỏ khoảng cách giữa các ô */
         }
-        th, td {
-            text-align: left; /* Căn chỉnh văn bản */
-            padding: 8px; /* Thêm đệm */
-            border: 1px solid #ddd; /* Thêm viền cho các ô */
+
+        th,
+        td {
+            text-align: left;
+            /* Căn chỉnh văn bản */
+            padding: 8px;
+            /* Thêm đệm */
+            border: 1px solid #ddd;
+            /* Thêm viền cho các ô */
         }
+
         thead tr {
-            background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+            background-color: #f2f2f2;
+            /* Màu nền cho tiêu đề bảng */
         }
     </style>
 
@@ -253,96 +266,97 @@ if(isPost()){
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 border" style="height: 175px; overflow-y: auto;">
                         <div class="">
                             <form action="" method="post">
-                            <ul class="list-unstyled custom-scrollbar" id="listItems">
-                            <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_1_1500_elimentary">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <span>1. 초등학교 영어</span>
-                                </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_2_1200_middle">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <span>2. 중학교 영어</span>
-                                </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_3_2850_high">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <span>3. 고등학교 영어</span>
-                                </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <span>4. 레벨별 영어</span>
-                                </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
-                                <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <span>5. 레벨별 영어</span>
+                                <ul class="list-unstyled custom-scrollbar" id="listItems">
+                                    <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                        <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_1_1500_elimentary">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <span>1. 초등학교 영어</span>
+                                    </li>
+                                    <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                        <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_2_1200_middle">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <span>2. 중학교 영어</span>
+                                    </li>
+                                    <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                        <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="voca_lever_3_2850_high">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <span>3. 고등학교 영어</span>
+                                    </li>
+                                    <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                        <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <span>4. 레벨별 영어</span>
+                                    </li>
+                                    <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                        <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <span>5. 레벨별 영어</span>
 
-                                </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" >
-                                <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <span>6. 레벨별 영어</span>
+                                    </li>
+                                    <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                        <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <span>6. 레벨별 영어</span>
 
-                                </li>
-                                <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;" >
-                                <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <span>7. 레벨별 영어</span>
+                                    </li>
+                                    <li class="mt-2 shadow-sm p-2 rounded-lg" style="background-color: #f5f5f5;">
+                                        <button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtn" value="ClickMe">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <span>7. 레벨별 영어</span>
 
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
                             </form>
                         </div>
                     </div>
 
                     <!-- Phần 2 -->
-                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 table-container" id="content" style="height: 175px;">
-    <table>
-        <thead>
-            <tr>
-                <th>숫자 순서</th>
-                <th>English</th>
-                <th>한국</th>            
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-           // if (isset($_POST['submitBtnVoca']) && ($_POST['submitBtnVoca']== true)):
-          // if($_POST['submitBtnVoca']== true):
-            if(!empty($vocaQuery)):
-                $count = 0;
-                foreach($vocaQuery as $item):
-                    $count++; 
-            ?>
-            <tr>
-                <td><?php echo $count; ?></td>
-                <td><?php echo $item['english'] ?></td>
-                <td><?php echo $item['한국'] ?></td>
-            </tr>
-            <?php
-                endforeach;
-            endif;
-      //  endif;
-   // endif;
-            ?>
-            <form action="" method="post">
-            <tr><button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtnVoca" value="true">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <span>도전</span></tr>
-                                    </form>
-        </tbody> 
+                    <div class="col-5 col-sm-5 col-md-5 col-lg-5 table-container" id="content" style="height: 175px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>숫자 순서</th>
+                                    <th>English</th>
+                                    <th>한국</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // if (isset($_POST['submitBtnVoca']) && ($_POST['submitBtnVoca']== true)):
+                                // if($_POST['submitBtnVoca']== true):
+                                if (!empty($vocaQuery)) :
+                                    $count = 0;
+                                    foreach ($vocaQuery as $item) :
+                                        $count++;
+                                ?>
+                                        <tr>
+                                            <td><?php echo $count; ?></td>
+                                            <td><?php echo $item['english'] ?></td>
+                                            <td><?php echo $item['한국'] ?></td>
+                                        </tr>
+                                <?php
+                                    endforeach;
+                                endif;
+                                //  endif;
+                                // endif;
+                                ?>
+                                <form action="" method="post">
+                                    <tr><button class="btn btn-outline-secondary btn-sm" type="submit" name="submitBtnVoca" value="true">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <span>도전</span>
+                                    </tr>
+                                </form>
+                            </tbody>
 
-    </table>
+                        </table>
 
                     </div>
 
@@ -365,7 +379,7 @@ if(isPost()){
                             <div class="border mb-2 p-2" style="height: 80px; background-color: #f5f5f5;">
                                 <span class="font-weight-bold">방문자 ID: <?php echo $id ?></span>
                                 <span class="d-flex justify-content font-weight-bold">이름: <?php echo $name ?></span>
-                               <a href="?module=auth&action=logout"><span class="d-flex justify-content font-weight-bold">Logout</span></a>
+                                <a href="?module=auth&action=logout"><span class="d-flex justify-content font-weight-bold">Logout</span></a>
 
                             </div>
 
@@ -535,50 +549,52 @@ if(isPost()){
             <!-- Phần 3 - Cột 3 -->
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 border">
 
-            <table>
-            <thead>
-            <tr>
-                <th>숫자 순서</th>
-                <th>English</th>
-                <th>한국</th>            
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if(!empty($renderQuery)):
-                $count = 0;
-                foreach($renderQuery as $item):
-                    $count++; 
-            ?>
-            <tr>
-                <td><?php echo $count; ?></td>
-                <td><?php echo $item['english'] ?>                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div></td>
-                <td><?php echo $item['한국'] ?>                                            <div class="form-check d-flex align-items-center ml-auto">
-                                                <input class="form-check-input" type="checkbox" id="myCheckbox">
-                                            </div></td>
-            </tr>
-            <?php
-                endforeach;
-            endif;
-            ?>
-        </tbody> 
-    </table>
-    <div>
-                                                <button class="btn btn-primary mr-2" style="display: block;">제출하다</button>
-                                            </div>
-    </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>숫자 순서</th>
+                            <th>English</th>
+                            <th>한국</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        if (!empty($renderQuery)) :
+                            $count = 0;
+                            foreach ($renderQuery as $item) :
+                                $count++;
+                        ?>
+                                <tr>
+                                    <td><?php echo $count; ?></td>
+                                    <td><?php echo $item['english'] ?> <div class="form-check d-flex align-items-center ml-auto">
+                                            <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                        </div>
+                                    </td>
+                                    <td><?php echo $item['한국'] ?> <div class="form-check d-flex align-items-center ml-auto">
+                                            <input class="form-check-input" type="checkbox" id="myCheckbox">
+                                        </div>
+                                    </td>
+                                </tr>
+                        <?php
+                            endforeach;
+                        endif;
+                        ?>
+                    </tbody>
+                </table>
+                <div>
+                    <button class="btn btn-primary mr-2" style="display: block;">제출하다</button>
+                </div>
+            </div>
 
-    <script>
-        $(document).ready(function() {
-            $(".game-button").click(function() {
-                var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
-                $("#gameFrame").attr("src", gameUrl); // Cập nhật src của iframe
-                $("#gameFrame").show(); // Hiển thị iframe nếu nó đang ẩn
-            });
-        });
-    </script>
+            <script>
+                $(document).ready(function() {
+                    $(".game-button").click(function() {
+                        var gameUrl = $(this).data("game-url"); // Lấy URL từ attribute của button
+                        $("#gameFrame").attr("src", gameUrl); // Cập nhật src của iframe
+                        $("#gameFrame").show(); // Hiển thị iframe nếu nó đang ẩn
+                    });
+                });
+            </script>
 
 </body>
 

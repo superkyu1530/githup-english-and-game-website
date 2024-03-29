@@ -162,7 +162,12 @@
                                     </div>
                                     <input type="text" class="p-2 mt-2 mr-2 border d-flex flex-column align-items-start" placeholder="Your email login" style="width: 235px; height: 45px; border-radius: 10px;">
 
-
+                                    <!-- check -->
+                                    <div class="d-flex justify-content-center mt-3">
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#successModal">
+                                            <i class="fa fa-check"></i> Check
+                                        </button>
+                                    </div>
                                     <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
@@ -179,13 +184,6 @@
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closePage()">Close</button>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <!-- check -->
-                                        <div class="d-flex justify-content-center mt-5">
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#successModal">
-                                                <i class="fa fa-check"></i> Check
-                                            </button>
                                         </div>
 
                                         <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
