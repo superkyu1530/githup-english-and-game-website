@@ -405,13 +405,13 @@ if (isPost()) {
                             <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                                 <div class="d-flex align-items-center flex-grow-1 px-2">
                                     <span>1. Bricks Breaker</span>
-                                    <button class="btn btn-sm ml-auto game-button" data-game-url="..\Web Test Game\Block Puzzle\Block Puzzle.html"><i class="fas fa-lock-open"></i></button>
+                                    <button class="btn btn-sm ml-auto game-button" data-game-url="Web Test Game\Block Puzzle\Block Puzzle.html"><i class="fas fa-lock-open"></i></button>
                                 </div>
                             </li>
                             <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                                 <div class="d-flex align-items-center flex-grow-1 p-2">
                                     <span>2. Line Coler</span>
-                                    <button class="btn btn-sm ml-auto game-button" data-game-url="..\Web Test Game\Line Coler\Line Coler.html"><i class="fas fa-lock-open"></i></button>
+                                    <button class="btn btn-sm ml-auto game-button" data-game-url="Web Test Game\Line Coler\Line Coler.html"><i class="fas fa-lock-open"></i></button>
                                 </div>
                             </li>
                             <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
@@ -429,13 +429,13 @@ if (isPost()) {
                             <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                                 <div class="d-flex align-items-center flex-grow-1 p-2">
                                     <span>5. Fill The Cups</span>
-                                    <button class="btn btn-sm ml-auto game-button" data-game-url="..\Web Test Game\Fill The Cups\fillthecups.html"><i class="fas fa-lock-open"></i></button>
+                                    <button class="btn btn-sm ml-auto game-button" data-game-url="Web Test Game\Fill The Cups\fillthecups.html"><i class="fas fa-lock-open"></i></button>
                                 </div>
                             </li>
                             <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">
                                 <div class="d-flex align-items-center flex-grow-1 p-2">
                                     <span>6. Word Blocks</span>
-                                    <button class="btn btn-sm ml-auto game-button" data-game-url="..\Web Test Game\Word Blocks\Word Blocks.html"><i class="fas fa-lock-open"></i></button>
+                                    <button class="btn btn-sm ml-auto game-button" data-game-url="Web Test Game\Word Blocks\Word Blocks.html"><i class="fas fa-lock-open"></i></button>
                                 </div>
                             </li>
                             <li class="mt-2 mb-2 rounded-lg d-flex align-items-center border shadow-sm" style="height: 50px; background-color: #f5f5f5;">

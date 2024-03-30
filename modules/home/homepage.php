@@ -102,7 +102,7 @@ if (!defined('_CODE')) {
                 <div class="box3 col" style=" background: #2d2d83;">
                   <div class="d-flex justify-content-center align-items-center" style="height: 100%; flex-direction: column;">
                     <span class="font-weight-bold" style="font-size: 25px; color: yellow;">로그인</span>
-                    <a href="?module=admin&action=adminpage"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">Admin</span></a>
+                    <a href="?module=admin&action=login"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">Admin</span></a>
                     <a href="?module=auth&action=login"> <span class="font-weight-bold" style="font-size: 25px; color: yellow;">User</span></a>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ if (!defined('_CODE')) {
           <!-- Ảnh game -->
           <div class="d-flex justify-content-center align-items-center mb-4">
             <div>
-              <img src="../page/assets/images/game.png" alt="{product.name}" style="width: 1400px; max-height: 290px;">
+              <img src="assets/images/game.png" alt="{product.name}" style="width: 1400px; max-height: 290px;">
             </div>
           </div>
         </div>
